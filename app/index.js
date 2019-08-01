@@ -11,6 +11,7 @@ const passport = require('passport');
 const Helpers = require('./helpers');
 const methodOverride = require('method-override');
 const rememberLogin = require('app/http/middleware/rememberLogin');
+const vcapServices = require('vcap_services');
 
 module.exports = class Application {
     constructor() {
@@ -27,7 +28,14 @@ module.exports = class Application {
 
     setMongoConnection() {
         mongoose.Promise = global.Promise;
-        mongoose.connect(config.database.url);
+        
+        var myUrl = config.database.url
+        const credentials = vcapServices.findCredentials({ service: 'mongodb' });
+        if(credentials["uri"]){
+            myUrl = credentials["uri"]
+        }
+        console.log(myUrl)
+        mongoose.connect(myUrl);
     }
 
     /**

@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "start:prod": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -38,9 +39,10 @@
     "sitemap": "^3.2.2",
     "striptags": "^3.1.1",
     "unique-string": "^1.0.0",
-    "validator": "^11.1.0"
+    "validator": "^11.1.0",
+    "vcap_services": "^0.7.1"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.19.1"
   }
 }
