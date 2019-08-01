@@ -26,7 +26,9 @@ WORKDIR /home/node/app
 COPY --chown=node:node ["package*.json","*.lock","npm-shrinkwrap.json*", "./"]
 
 # Run npm install. Necessary to run before adding application code to leverage Docker cache
-RUN npm install --silent && npm cache clean --force && mv node_modules ../
+RUN npm install --silent
+RUN npm cache clean --force
+RUN mv node_modules ../
 
 # Copy compiled application files
 COPY --chown=node:node ./dist .
