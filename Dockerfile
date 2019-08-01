@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install
 
 # The instructions for second stage
-FROM node:10-stretch-slim
+FROM node:10-stretch
 
 # Build arguments
 ENV NODE_ENV=production
