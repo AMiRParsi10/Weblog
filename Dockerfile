@@ -10,7 +10,7 @@ ENV  NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV  PATH=$PATH:/home/node/.npm-global/bin:/home/node/node_modules/.bin:$PATH
 
 # For handling Karnel signal properly.
-RUN apk add --no-cache tini
+RUN apk add --no-cache tini python make g++
 
 # Non previlage mode for better security (this user comes with official NodeJS image).
 USER node
