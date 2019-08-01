@@ -13,6 +13,10 @@ RUN npm install
 # The instructions for second stage
 FROM node:10-alpine
 
+# Build arguments
+ENV NODE_ENV=production
+ENV PORT=3000
+
 WORKDIR /usr/src/app
 COPY --from=builder node_modules node_modules
 
