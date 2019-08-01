@@ -1,0 +1,53 @@
+<div class="row">
+    <!-- Blog Post Content Column -->
+    <div class="col-lg-12">
+            <!-- Title -->
+            <h1 class="mb-3"><%= course.title %></h1>
+
+            <!-- Author -->
+        <p class="text-muted small">
+            <span> توسط <a href="#"><%= course.user.name %></a></span>
+            -
+            <span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
+        </p>
+    
+            <hr>
+            <!-- Post Content -->
+           <div id="content">
+               <%- course.body %>
+           </div>
+            <!--<hr>-->
+
+
+        <hr>
+
+        <div class="row mb-3">
+            <div class="d-inline p-2 bg-dark text-white  m-3">
+                <h3>آخرین مطالب</h3>
+            </div>
+        </div>
+        <div class="row">
+            <% lastcourses.forEach(course => { %>
+            <div class="col-6 col-md-3">
+                <div class="card">
+                    <img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>">
+                    <div class="card-body">
+                        <h3><a href="<%= course.path() %>"><%= course.title %></a></h3>
+                        <p class="card-text"><%- course.body.substr(0,80) %>...</p>
+                        <div class=" ">
+                            <a href="<%= course.path() %>" class="  btn btn-info btn-sm cen">اطلاعات بیشتر</a>
+
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
+                        <!--<%= course.viewCount %> بازدید-->
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+
+    </div>
+</div>
+

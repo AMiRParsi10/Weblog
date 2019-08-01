@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%- defineContent('title') || 'مجله فیتکس'  %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-rtl.min.css" />    
+    <link rel="stylesheet" href="/css/vazir.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <%- style %>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand bg-secondary p-2" href="/">مجله ورزشی فیتکس</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">صفحه اصلی</span></a>
+                </li>
+                <li class="nav-item">
+                  <!--<a class="nav-link" href="/courses">دوره ها</a>-->
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about-us">درباره ما</a>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                    <% if(auth.check) { %>
+                      <li><a class="btn btn-success btn-sm ml-2" href="/admin">پنل کاربری</a></li>
+                      <li><a class="btn btn-danger btn-sm" href="/logout">خروج</a></li>       
+                    <% } else { %>
+                  <a class="navbar-brand" href="#">
+
+                      <!--<img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">-->
+                      <!--<img src="/public/images/photo1752615152809781221.f802aef2.jpg" width="30" height="30" class="d-inline-block align-top" alt="">-->
+                      FitEx
+                  </a>
+                      <!--<li><a class="btn btn-success btn-sm ml-2" href="/auth/login">ورود</a></li>-->
+                      <!--<li><a class="btn btn-primary btn-sm" href="/auth/register">عضویت</a></li>       -->
+                    <% } %>
+              </ul>
+            </div>
+        </div>
+
+      </nav>
+
+    <div class="container mt-4">
+      <%- body %>
+
+    </div>
+    <div class="Footer  bg-dark text-white">
+        <!-- Footer -->
+        <footer class="page-footer font-small teal pt-4 ">
+
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a class="bg-danger text-white" href="https://fitexapp.ir"> fitexapp.ir</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+    </div>
+
+
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>    
+    <%- script %>
+</body>
+</html>
