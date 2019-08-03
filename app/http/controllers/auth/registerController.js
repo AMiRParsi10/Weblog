@@ -5,9 +5,9 @@ class registerController extends controller {
 
     showRegsitrationForm(req , res) {
         const title = 'صفحه عضویت';
-        res.render('home/auth/register' , { recaptcha : this.recaptcha.render() , title });
+        res.render('home/auth/register' , { title });
     }
-
+    // recaptcha : this.recaptcha.render() , 
     async registerProccess(req ,res , next) {
         await this.recaptchaValidation(req , res);
         let result = await this.validationData(req)

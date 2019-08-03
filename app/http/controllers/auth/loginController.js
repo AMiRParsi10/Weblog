@@ -5,9 +5,9 @@ class loginController extends controller {
     
     showLoginForm(req , res) {
         const title = 'صفحه ورود';
-        res.render('home/auth/login' , { recaptcha : this.recaptcha.render() , title });
+        res.render('home/auth/login' , { title });
     }
-
+    // recaptcha : this.recaptcha.render() 
     async loginProccess(req  ,res , next) {
         // await this.recaptchaValidation(req , res);
         let result = await this.validationData(req)
