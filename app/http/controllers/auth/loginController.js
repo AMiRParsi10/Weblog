@@ -7,7 +7,7 @@ class loginController extends controller {
         const title = 'صفحه ورود';
         res.render('home/auth/login' , { title });
     }
-    // recaptcha : this.recaptcha.render() ,
+   // recaptcha : this.recaptcha.render() ,
 
     async loginProccess(req  ,res , next) {
         // await this.recaptchaValidation(req , res);
