@@ -29,7 +29,7 @@ module.exports = class Application {
     setMongoConnection() {
         mongoose.Promise = global.Promise;
         
-        const myUrl = config.database.url;
+        var myUrl = config.database.url;
         const credentials = vcapServices.findCredentials({ service: 'mongodb' });
         if(credentials["uri"]){
             myUrl = credentials["uri"]
