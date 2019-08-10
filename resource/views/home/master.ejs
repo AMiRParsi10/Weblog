@@ -18,14 +18,16 @@
     <%- style %>
 </head>
 <body>
-    
+
+
+
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand bg-secondary p-2" href="/">مجله ورزشی فیتکس</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-      
+
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item font-weight-bold " >
@@ -41,7 +43,7 @@
               <ul class="nav navbar-nav navbar-right">
                     <% if(auth.check) { %>
                       <li><a class="btn btn-success btn-sm ml-2" href="/admin">پنل کاربری</a></li>
-                      <li><a class="btn btn-danger btn-sm" href="/logout">خروج</a></li>       
+                      <li><a class="btn btn-danger btn-sm" href="/logout">خروج</a></li>
                     <% } else { %>
                   <a class="navbar" href="#">
 
@@ -58,7 +60,10 @@
 
       </nav>
 
+
+
     <div class="container mt-4">
+
       <%- body %>
 
     </div>
@@ -68,13 +73,17 @@
 
             <nav class="nav nav-pils justify-content-center">
                 <a class="nav-item nav-link " href="https://www.instagram.com/fitexapp/"><img class="imgSocial" src="https://cdn4.iconfinder.com/data/icons/social-media-2146/512/25_social-512.png" alt=""></a>
-                <a class="nav-item nav-link " href="#"><img class="imgSocial" src="https://www.aparat.com/assets/web/ui/img-iZsq09GvHFF8zV82xC7kaw/logo/aparat_icon_color_white_64.png" alt=""></a>
+                <a class="nav-item nav-link " href="#"><img class="imgSocial" src="https://www.aparat.com/assets/web/ui/img-XYfsWT081BxRAGeWwgA/logo/aparat_icon_color_white_64.png" alt=""></a>
                 <a class="nav-item nav-link" href="#"><img class="imgSocial" src="https://cdn4.iconfinder.com/data/icons/social-media-2146/512/2_social-512.png" alt=""></a>
             </nav>
             <!-- Copyright -->
+            <div class="row">
+                <div class="col-11 col-md-12 p-2  ">
             <div class="text-center">تمامی حقوق متعلق به فیتکس میباشد , انتشار مطالب با ذکر منبع بلا مانع است</div>
             <div class="footer-copyright text-center py-3">© 2019 Copyright:
                 <a class="bg-danger text-white" href="https://fitexapp.ir"> fitexapp.ir</a>
+            </div>
+                </div>
             </div>
             <!-- Copyright -->
 
@@ -87,6 +96,16 @@
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145305000-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145305000-1');
+    </script>
+
     <%- script %>
 </body>
 </html>
