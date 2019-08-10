@@ -133,3 +133,8 @@
   .height {
     padding: 14%;
   }
+
+  /* end*/
+  .singleImageSize {
+    width: 600px;
+  }
