@@ -36,7 +36,7 @@ module.exports = class controller {
 
             errors.forEach(err => messages.push(err.msg));
 
-            req.flash('errors' , messages)
+            req.flash('errors' , messages);
 
             return false;
         }

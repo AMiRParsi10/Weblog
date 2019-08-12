@@ -137,3 +137,19 @@
   .singleImageSize {
     width: 600px;
   }
+
+  .text-decoration-none {
+    text-decoration: none !important;
+  }
+
+  /*.zoom {*/
+    /*!*background-color: green;*!*/
+    /*transition: transform .4s; !* Animation *!*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*margin: 10 auto;*/
+  /*}*/
+
+  /*.zoom:hover {*/
+    /*transform: scale(1.1); !* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) *!*/
+  /*}*/

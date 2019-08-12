@@ -6,7 +6,7 @@
                 <div class="container ">
                     <div class=" ">
                         <header class="jumbotron hero-spacer text-dark text-center ">
-                            <h3 class=" font-weight-bold  ">به دنیای فیتنس خوش آمدید!</h3>
+                            <h3 class=" font-weight-bold  ">به مجله فیتکس خوش آمدید!</h3>
                             <p class="font-weight">مطالب به روز و کاربردی برای بهبود سبک زندگی شما</p>
                         </header>
                     </div>
@@ -28,13 +28,13 @@
     </div>
     <!-- header big articles-->
 
-    <div class="row   ">
+    <div class="row ">
         <% headers.forEach(head => { %>
         <div class="col-12 col-md-4  p-2  mb-3">
             <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>
         <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="<%= head.path() %>"><%= head.title%></a></h2>
-            <p class="card-text"><%- head.body.substr(0,220)%>...</p>
+            <h2 class="card-title"><a class="text-dark text-decoration-none" href="<%= head.path() %>"><%= head.title%></a></h2>
+            <p class="card-text"><%- head.body.substr(0,120)%>...</p>
             <!--<a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a>-->
 
         </div>
@@ -58,10 +58,14 @@
 <div class="row">
     <% courses.forEach(course => { %>
       <div class="col-12 col-md-3 mb-3 p-3 ">
-          <div class="card ">
-              <a href="<%= course.path() %>">  <img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>"></a>
-              <div class="card-body ">
-                <h5><a class="text-dark" href="<%= course.path() %>"><%= course.title %></a></h5>
+          <div class="card">
+              <a href="<%= course.path() %>">
+                     <div class="view overlay zoom">
+                         <img class="card-img-top cardHeight img-fluid " src="<%= course.thumb %>" alt="<%= course.title %>">
+                     </div> </a>
+
+              <div class="card-body">
+                <h5><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>
                 <p class="card-text "><%- course.body.substr(0,80) %>...</p>
                   <!--<div class=" ">-->
                       <!--<a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a>-->
