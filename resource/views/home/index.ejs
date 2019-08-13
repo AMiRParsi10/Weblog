@@ -26,28 +26,49 @@
             <h3 > تازه ها</h3>
         </div>
     </div>
+    <!--&lt;!&ndash; header big articles&ndash;&gt;-->
+
+    <!--<div class="row ">-->
+        <!--<% headers.forEach(head => { %>-->
+        <!--<div class="col-12 col-md-4  mb-3">-->
+            <!--<a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>-->
+        <!--<div class="card-body">-->
+            <!--<h3 class="card-title "><a class="text-dark  text-decoration-none" href="<%= head.path() %>"><%= head.title%></a></h3>-->
+            <!--<p class="card-text"><%- head.body.substr(0,120)%>...</p>-->
+            <!--&lt;!&ndash;<a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a>&ndash;&gt;-->
+
+        <!--</div>-->
+        <!--<div class="card-footer text-muted d-none d-sm-block">-->
+            <!--<%= date(head.createdAt).format('jD jMMMM jYYYY') %>-->
+            <!--<a href="https://fitexapp.ir/">فیتکس</a>-->
+        <!--</div>-->
+        <!--</div>-->
+       <!--<% }) %>-->
+
+
+
+    <!--</div>-->
     <!-- header big articles-->
 
-    <div class="row ">
+    <div class="row">
         <% headers.forEach(head => { %>
-        <div class="col-12 col-md-4  mb-3">
-            <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>
-        <div class="card-body">
-            <h3 class="card-title "><a class="text-dark  text-decoration-none" href="<%= head.path() %>"><%= head.title%></a></h3>
-            <p class="card-text"><%- head.body.substr(0,120)%>...</p>
-            <!--<a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a>-->
+        <div class="col-12 col-md-6">
+            <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>">
+            <div class="card-body">
+                <h2 class="card-title"><%= head.title%></h2>
+                <p class="card-text"><%- head.body.substr(0,220)%></p>
+                <a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a>
 
+            </div>
+            <div class="card-footer text-muted">
+                <%= date(head.createdAt).format('jD jMMMM jYYYY') %>
+                <a href="https://fitexapp.ir/">فیتکس</a>
+            </div>
         </div>
-        <div class="card-footer text-muted d-none d-sm-block">
-            <%= date(head.createdAt).format('jD jMMMM jYYYY') %>
-            <a href="https://fitexapp.ir/">فیتکس</a>
-        </div>
-        </div>
-       <% }) %>
-
-
+        <% }) %>
 
     </div>
+
     <div class="row">
         <div class="d-inline p-2 bg-dark text-white  m-3 p-2">
             <h3 > خواندنی ها</h3>
