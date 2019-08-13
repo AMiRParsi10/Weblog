@@ -1,5 +1,5 @@
 # The instructions for the first stage
-FROM node:10-stretch as builder
+FROM node:8-stretch as builder
 
 # Build arguments
 ENV NODE_ENV=production
@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install
 
 # The instructions for second stage
-FROM node:10-stretch
+FROM node:8-stretch
 
 # Build arguments
 ENV NODE_ENV=production
