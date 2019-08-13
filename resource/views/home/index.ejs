@@ -1,19 +1,19 @@
 
     <!-- Jumbotron Header -->
-    <div class="view intro-2 height">
-        <div class="full-bg-img">
-            <div class="mask rgba-black-strong flex-center">
-                <div class="container ">
-                    <div class=" ">
-                        <header class="jumbotron hero-spacer text-dark text-center ">
-                            <h3 class=" font-weight-bold ">به مجله فیتکس خوش آمدید!</h3>
-                            <p class="font-weight">مطالب به روز و کاربردی برای بهبود سبک زندگی شما</p>
-                        </header>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--<div class="view intro-2 height">-->
+        <!--<div class="full-bg-img">-->
+            <!--<div class="mask rgba-black-strong flex-center">-->
+                <!--<div class="container ">-->
+                    <!--<div class=" ">-->
+                        <!--<header class="jumbotron hero-spacer text-dark text-center ">-->
+                            <!--<h3 class=" font-weight-bold ">به مجله فیتکس خوش آمدید!</h3>-->
+                            <!--<p class="font-weight">مطالب به روز و کاربردی برای بهبود سبک زندگی شما</p>-->
+                        <!--</header>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
 
 
@@ -52,11 +52,11 @@
 
     <div class="row">
         <% headers.forEach(head => { %>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-10 ">
             <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"> </a>
             <div class="card-body">
                 <a href="<%= head.path() %>" class="text-decoration-none" >   <h2 class="card-title text-dark "><%= head.title%></h2></a>
-                <p class="card-text"><%- head.body.substr(0,120)%></p>
+                <p class="card-text"><%- head.body.substr(0,180)%></p>
                 <!--<a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a>-->
 
             </div>

@@ -17,7 +17,7 @@ p{
     height: 168px !important;
 }
 .headHeight {
-    height: 33% !important;
+    height: 40% !important;
 }
 .backgroundColor {
     background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
@@ -32,29 +32,29 @@ p{
     height: 40px;
 }
 /*live*/
-.view {
-    background: url("https://images.unsplash.com/photo-1556817411-df27c6ec6e4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80")no-repeat center center;
-    background-size: cover;
-}
-@media (min-width: 768px) {
-    .view {
-        overflow: visible;
+/*.view {*/
+    /*background: url("https://images.unsplash.com/photo-1556817411-df27c6ec6e4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80")no-repeat center center;*/
+    /*background-size: cover;*/
+/*}*/
+/*@media (min-width: 768px) {*/
+    /*.view {*/
+        /*overflow: visible;*/
 
-    }
-}
-.navbar {
-    z-index: 1;
-}
+    /*}*/
+/*}*/
+/*.navbar {*/
+    /*z-index: 1;*/
+/*}*/
 
-html,
-body,
-header,
-.view {
-    height: 100%;
-}
-.height {
-    padding: 14%;
-}
+/*html,*/
+/*body,*/
+/*header,*/
+/*.view {*/
+    /*height: 100%;*/
+/*}*/
+/*.height {*/
+    /*padding: 14%;*/
+/*}*/
 
 /* end*/
 .singleImageSize {
