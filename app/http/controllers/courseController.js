@@ -8,7 +8,9 @@ class courseController extends controller {
     }
 
     async single(req , res) {
-        let lastcourses = await  Course.find({}).sort({ createdAt : -1 }).limit(4);
+
+        let lastCourses = await Course.find({}).sort({ createdAt : -1 }).skip(2).limit(4);
+        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(2).limit(4);
         let course = await Course.findOne({ slug : req.params.course })
             .populate([
                 {
@@ -18,7 +20,7 @@ class courseController extends controller {
             ]);
         // let canUserUse = await this.canUse(req , course);
 
-        res.render('home/single-course' , { course , lastcourses });
+        res.render('home/single-course' , { course , lastcourses: lastCourses , courses});
     }
 
     // async canUse(req  , course) {
