@@ -6,7 +6,7 @@
                 <div class="container ">
                     <div class=" ">
                         <header class="jumbotron hero-spacer text-dark text-center ">
-                            <h3 class=" font-weight-bold  ">به مجله فیتکس خوش آمدید!</h3>
+                            <h3 class=" font-weight-bold ">به مجله فیتکس خوش آمدید!</h3>
                             <p class="font-weight">مطالب به روز و کاربردی برای بهبود سبک زندگی شما</p>
                         </header>
                     </div>
@@ -30,7 +30,7 @@
 
     <div class="row ">
         <% headers.forEach(head => { %>
-        <div class="col-12 col-md-4  p-2  mb-3">
+        <div class="col-12 col-md-4  mb-3">
             <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>
         <div class="card-body">
             <h3 class="card-title "><a class="text-dark  text-decoration-none" href="<%= head.path() %>"><%= head.title%></a></h3>
@@ -57,12 +57,12 @@
 
 <div class="row">
     <% courses.forEach(course => { %>
-      <div class="col-12 col-md-3 mb-3 p-1 ">
+      <div class="col-12 col-md-3 mb-3  ">
           <div class="card">
               <a href="<%= course.path() %>">
-                     <div class="view overlay zoom">
-                         <img class="card-img-top cardHeight img-fluid " src="<%= course.thumb %>" alt="<%= course.title %>">
-                     </div> </a>
+
+                         <img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>">
+                    > </a>
 
               <div class="card-body">
                 <h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>
