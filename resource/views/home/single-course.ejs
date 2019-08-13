@@ -31,12 +31,16 @@
         </div>
         <div class="row">
             <% lastcourses.forEach(course => { %>
-            <div class="col-12 col-md-3 mb-3 p-3 ">
-                <div class="card ">
-                    <a href="<%= course.path() %>">  <img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>"></a>
-                    <div class="card-body ">
-                        <h5 class="p-1"><a class="text-dark" href="<%= course.path() %>"><%= course.title %></a></h5>
-                        <p class="card-text "><small><%- course.body.substr(0,80) %>...</small></p>
+            <div class="col-12 col-md-3 mb-3 p-1 ">
+                <div class="card">
+                    <a href="<%= course.path() %>">
+                        <div class="view overlay zoom">
+                            <img class="card-img-top cardHeight img-fluid " src="<%= course.thumb %>" alt="<%= course.title %>">
+                        </div> </a>
+
+                    <div class="card-body">
+                        <h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>
+                        <p class="card-text"><small><%- course.body.substr(0,80) %>...</small></p>
                         <!--<div class=" ">-->
                         <!--<a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a>-->
 
