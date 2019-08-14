@@ -52,17 +52,17 @@
 
 
 
-    <div class="row text-center justify-content-center">
+    <div class="row text-center justify-content-center mb-3">
         <% headers.forEach(head => { %>
-        <div class="col-12 col-md-8 ">
+        <div class="col-12 col-md-7  ">
             <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"> </a>
             <div class="card-body">
-                <a href="<%= head.path() %>" class="text-decoration-none" >   <h2 class="card-title text-dark "><%= head.title%></h2></a>
-                <p class="card-text"><%- head.body.substr(0,180)%></p>
-                <!--<a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a>-->
+                <a href="<%= head.path() %>" class="text-decoration-none" > <strong><h3 class="card-title text-dark "><%= head.title%></h3></strong>  </a>
+               <div class="d-none d-sm-block"><p class="card-text "><small><%- head.body.substr(0,350)%>...</small></p></div>
+
 
             </div>
-            <div class="card-footer text-muted">
+            <div class="card-footer text-muted d-none d-sm-block ">
                 <%= date(head.createdAt).format('jD jMMMM jYYYY') %>
                 <a href="https://fitexapp.ir/">فیتکس</a>
             </div>
@@ -103,3 +103,5 @@
       </div>
     <% }) %>
 </div>
+
+
