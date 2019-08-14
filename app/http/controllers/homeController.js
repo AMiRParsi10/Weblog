@@ -7,8 +7,8 @@ const striptags = require('striptags');
 class homeController extends controller {
     
     async index(req , res) {
-        let headers = await Course.find({}).sort({ createdAt : -1 }).limit(2).exec();
-        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(2).limit();
+        let headers = await Course.find({}).sort({ createdAt : -1 }).skip(1).limit(2).exec();
+        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit();
         res.render('home/index' , { courses , headers });
 
     }
