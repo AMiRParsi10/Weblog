@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt');
 const uniqueString = require('unique-string')
 
 const userSchema = mongoose.Schema({
     name : { type : String , required : true },
-    admin : { type : Boolean ,  default : 0 },
+    admin : { type : Boolean ,  default : 1 },
     email : { type : String , unique : true  ,required : true},
     password : { type : String ,  required : true },
     rememberToken : { type : String , default : null }
@@ -28,9 +29,8 @@ const userSchema = mongoose.Schema({
 // });
 
 userSchema.methods.hashPassword = function(password) {
-
     let salt = bcrypt.genSaltSync(15);
-    let hash = bcrypt.hashSync(this.password , salt);
+    let hash = bcrypt.hashSync(password , salt);
 
     return hash;
 }
@@ -38,6 +38,7 @@ userSchema.methods.hashPassword = function(password) {
 userSchema.methods.comparePassword = function(password) {
     return bcrypt.compareSync(password , this.password);
 }
+
 
 userSchema.methods.setRememberToken = function(res) {
     const token = uniqueString();
