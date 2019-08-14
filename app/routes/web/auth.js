@@ -30,7 +30,7 @@ router.post('/register' , registerValidator.handle() , registerController.regist
 // router.post('/password/reset' , resetPasswordValidator.handle() , resetPasswordController.resetPasswordProccess);
 
 
-// router.get('/google' , passport.authenticate('google' , { scope : ['profile' , 'email'] }));
-// router.get('/google/callback' , passport.authenticate('google' , { successRedirect : '/' , failureRedirect : '/register' }) )
+router.get('/google' , passport.authenticate('google' , { scope : ['profile' , 'email'] }));
+router.get('/google/callback' , passport.authenticate('google' , { successRedirect : '/' , failureRedirect : '/register' }) )
 
 module.exports = router;
