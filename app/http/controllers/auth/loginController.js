@@ -27,6 +27,9 @@ class loginController extends controller {
                 if(req.body.remember) {
                     user.setRememberToken(res);
                 }
+                if(user.admin){
+                    return res.redirect('/admin');
+                }
 
                 return res.redirect('/');
             })

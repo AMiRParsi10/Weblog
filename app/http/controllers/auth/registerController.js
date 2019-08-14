@@ -1,5 +1,6 @@
 const controller = require('app/http/controllers/controller');
 const passport = require('passport');
+const User = require('app/models/user');
 
 class registerController extends controller {
 
