@@ -85,7 +85,7 @@ let { search  , order } = req.query;
             </a>
 
             <div class="card-body ">
-                <h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>
+                <h6 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h6>
                 <p class=" card-text"><%- course.body.substr(0,130)%>...</p>
                 <%/*%> <a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a> <%*/%>
 

@@ -7,10 +7,10 @@ p {
     font-size: medium;
 }
 .card-body p{
-    font-size: small;
+    font-size: smaller;
 }
 .Footer{
-    background: linear-gradient(to right, #003a59, #001425);
+    background: linear-gradient(to right, #001e32, #001425);
     display: block;
     color: #fff;
     text-align: center;
@@ -68,10 +68,10 @@ header,
     text-decoration: none !important;
 }
 .heightCart {
-    height : 435px ;
+    height : 455px ;
 }
 .heightHeadCart {
-    height : 45% ;
+    height : 50% ;
 }
 
 /*search box css start here*/

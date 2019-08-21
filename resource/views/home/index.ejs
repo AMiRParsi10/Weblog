@@ -1,19 +1,19 @@
 
      <!--Jumbotron Header-->
-    <div class="view intro-2 height ">
-        <div class="full-bg-img ">
-            <div class="mask rgba-black-strong flex-center">
-                <div class="container ">
-                    <div class=" ">
-                        <header class="jumbotron hero-spacer text-dark text-center  ">
-                            <h3 class=" font-weight-bold shadow-sm">به مجله فیتکس خوش آمدید!</h3>
-                            <h6 class="pt-1 ">مطالب به روز و کاربردی برای بهبود سبک زندگی شما</h6>
-                        </header>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--<div class="view intro-2 height ">-->
+        <!--<div class="full-bg-img ">-->
+            <!--<div class="mask rgba-black-strong flex-center">-->
+                <!--<div class="container ">-->
+                    <!--<div class=" ">-->
+                        <!--<header class="jumbotron hero-spacer text-dark text-center  ">-->
+                            <!--<h3 class=" font-weight-bold shadow-sm">به مجله فیتکس خوش آمدید!</h3>-->
+                            <!--<h6 class="pt-1 ">مطالب به روز و کاربردی برای بهبود سبک زندگی شما</h6>-->
+                        <!--</header>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
 
 
@@ -33,7 +33,7 @@
         <div class="col-12 col-md-4  mb-3 ">
             <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>
         <div class="card-body shadow heightHeadCart">
-            <a href="<%= head.path() %>" class="text-decoration-none" > <strong><h3 class="card-title text-dark "><%= head.title%></h3></strong>  </a>
+            <a href="<%= head.path() %>" class="text-decoration-none" ><h4 class="card-title text-dark "><%= head.title%></h4></a>
           <div class="d-none d-sm-block"> <p class="card-text "><%- head.body.substr(0,180)%>...</p></div>
        <%/*%>     <a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a><%*/%>
 
@@ -134,7 +134,7 @@
                      </a>
 
               <div class="card-body ">
-                <h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>
+                <h6 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h6>
                   <p class=" card-text"><%- course.body.substr(0,130)%>...</p>
                      <%/*%> <a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a> <%*/%>
 
