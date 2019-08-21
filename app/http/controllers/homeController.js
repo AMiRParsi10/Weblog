@@ -10,8 +10,8 @@ class homeController extends controller {
 
 
 
-        let headers = await Course.find({}).sort({ createdAt : -1 }).skip().limit(3).exec();
-        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit(8).exec();
+        let headers = await Course.find({}).sort({ createdAt : -1 }).skip(1).limit(3).exec();
+        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(4).limit(8).exec();
         res.render('home/index' , { courses , headers });
 
 
