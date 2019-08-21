@@ -7,9 +7,14 @@ const striptags = require('striptags');
 class homeController extends controller {
     
     async index(req , res) {
-        let headers = await Course.find({}).sort({ createdAt : -1 }).skip(1).limit(2).exec();
-        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit();
+
+
+
+        let headers = await Course.find({}).sort({ createdAt : -1 }).skip().limit(3).exec();
+        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit(8).exec();
         res.render('home/index' , { courses , headers });
+
+
 
     }
 
@@ -24,7 +29,7 @@ class homeController extends controller {
                     cachTime : 600000
                 });
                 sitemap.add({ url : '/' , changefreq : 'daily' , priority : 1  });
-                sitemap.add({ url : '/courses' , priority : 1 });
+                sitemap.add({ url : '/post' , priority : 1 });
 
                 let courses =  await Course.find({ }).sort({ createdAt : -1 });
                 courses.forEach(course => {
@@ -44,7 +49,7 @@ class homeController extends controller {
             let feed = new rss({
                 title : 'فید خوان مطالب  ورزشی فیتکس',
                 description : 'جدیدترین مطالب ورزش و سلامت را از طریق rss بخوانید',
-                feed_url : `${config.siteurl}/feed/courses`,
+                feed_url : `${config.siteurl}/feed/post`,
                 site_url : config.site_url,
             });
 

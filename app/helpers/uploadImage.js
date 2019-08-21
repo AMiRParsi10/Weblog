@@ -8,7 +8,7 @@ const getDirImage = () => {
     let day = new Date().getDay();
 
     return `./public/uploads/images/${year}/${month}/${day}`;
-}
+};
 
 
 const ImageStorage = multer.diskStorage({

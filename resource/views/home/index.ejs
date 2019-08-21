@@ -1,13 +1,13 @@
 
      <!--Jumbotron Header-->
-    <div class="view intro-2 height">
-        <div class="full-bg-img">
+    <div class="view intro-2 height ">
+        <div class="full-bg-img ">
             <div class="mask rgba-black-strong flex-center">
                 <div class="container ">
                     <div class=" ">
-                        <header class="jumbotron hero-spacer text-dark text-center ">
-                            <h3 class=" font-weight-bold ">به مجله فیتکس خوش آمدید!</h3>
-                            <p class="font-weight">مطالب به روز و کاربردی برای بهبود سبک زندگی شما</p>
+                        <header class="jumbotron hero-spacer text-dark text-center  ">
+                            <h3 class=" font-weight-bold shadow-sm">به مجله فیتکس خوش آمدید!</h3>
+                            <h6 class="pt-1 ">مطالب به روز و کاربردی برای بهبود سبک زندگی شما</h6>
                         </header>
                     </div>
                 </div>
@@ -23,36 +23,36 @@
 
     <div class="row  m-2">
         <div class="d-inline bg-dark text-white m-3 p-2 ">
-            <h3 > تازه های مجله</h3>
+            <h3 > سر تیتر مجله</h3>
         </div>
     </div>
-    <!--&lt;!&ndash; header big articles&ndash;&gt;-->
-
-    <!--<div class="row ">-->
-        <!--<% headers.forEach(head => { %>-->
-        <!--<div class="col-12 col-md-4  mb-3">-->
-            <!--<a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>-->
-        <!--<div class="card-body">-->
-            <!--<h3 class="card-title "><a class="text-dark  text-decoration-none" href="<%= head.path() %>"><%= head.title%></a></h3>-->
-            <!--<p class="card-text"><%- head.body.substr(0,120)%>...</p>-->
-            <!--&lt;!&ndash;<a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a>&ndash;&gt;-->
-
-        <!--</div>-->
-        <!--<div class="card-footer text-muted d-none d-sm-block">-->
-            <!--<%= date(head.createdAt).format('jD jMMMM jYYYY') %>-->
-            <!--<a href="https://fitexapp.ir/">فیتکس</a>-->
-        <!--</div>-->
-        <!--</div>-->
-       <!--<% }) %>-->
-
-
-
-    <!--</div>-->
     <!-- header big articles-->
 
+    <div class="row  ">
+        <% headers.forEach(head => { %>
+        <div class="col-12 col-md-4  mb-3 ">
+            <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>
+        <div class="card-body shadow heightHeadCart">
+            <a href="<%= head.path() %>" class="text-decoration-none" > <strong><h3 class="card-title text-dark "><%= head.title%></h3></strong>  </a>
+          <div class="d-none d-sm-block"> <p class="card-text "><%- head.body.substr(0,180)%>...</p></div>
+       <%/*%>     <a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a><%*/%>
+
+        </div>
+        <div class="card-footer text-muted ">
+            <%= date(head.createdAt).format('jD jMMMM jYYYY') %>
+            <a href="https://fitexapp.ir/">فیتکس</a>
+        </div>
+        </div>
+       <% }) %>
 
 
-    <div class="row text-center justify-content-center mb-5">
+
+    </div>
+
+
+
+
+   <%/*%> <div class="row text-center justify-content-center mb-5">
         <% headers.forEach(head => { %>
         <div class="col-12 col-md-7 mb-5 ">
             <a href="<%= head.path() %> "> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"> </a>
@@ -70,38 +70,92 @@
         <% }) %>
 
     </div>
+     <%*/%>
 
     <div class="row">
         <div class="d-inline p-2 bg-dark text-white  m-3 p-2">
-            <h3 > خواندنی ها</h3>
+            <h3 >آخرین خواندنی ها</h3>
         </div>
     </div>
 
 
-<div class="row">
+<%/*%> search <%*/%>
+     <section class="search-sec mb-5 " >
+         <div class="container">
+             <form action="/post" method="get" novalidate="novalidate">
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div class="row">
+                             <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                 <button type="submit" class="btn wrn-btn btn-outline-primary">جست و جو</button>
+                             </div>
+                             <!--<div class="col-lg-3 col-md-3 col-sm-12 p-0">-->
+                                 <!--<select class="form-control search-slt" id="exampleFormControlSelect1">-->
+                                     <!--<option>Select Pickup City</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                 <!--</select>-->
+                             <!--</div>-->
+                             <!--<div class="col-lg-3 col-md-3 col-sm-12 p-0">-->
+                                 <!--<select class="form-control search-slt" id="exampleFormControlSelect1">-->
+                                     <!--<option>Select Drop City</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                     <!--<option>Example one</option>-->
+                                 <!--</select>-->
+                             <!--</div>-->
+                             <div class="col-lg-8 col-md-3 col-sm-12 p-0">
+                                 <input type="text" class="form-control search-slt" name="search" placeholder="جست و جو کنید">
+                             </div>
+
+                         </div>
+                     </div>
+                 </div>
+             </form>
+         </div>
+     </section>
+
+     <%/*%>End search <%*/%>
+
+<div class="row ">
     <% courses.forEach(course => { %>
-      <div class="col-12 col-md-3 mb-3  ">
-          <div class="card">
+      <div class="col-12 col-md-3  mb-4 ">
+          <div class="card shadow heightCart ">
               <a href="<%= course.path() %>">
 
                          <img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>">
                      </a>
 
-              <div class="card-body">
+              <div class="card-body ">
                 <h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>
-                  <p class="card-text"><small><%- course.body.substr(0,80) %>...</small></p>
-                  <!--<div class=" ">-->
-                      <!--<a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a>-->
+                  <p class=" card-text"><%- course.body.substr(0,130)%>...</p>
+                     <%/*%> <a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a> <%*/%>
 
-                  <!--</div>-->
+
               </div>
-              <!--<div class="card-footer text-muted">-->
-                  <!--<span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>-->
-                <!--&lt;!&ndash;<%= course.viewCount %> بازدید&ndash;&gt;-->
-              <!--</div>-->
+              <div class="card-footer text-muted alert-secondary sidebar-heading">
+                  <span> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
+              <%/*%> <%= course.viewCount %>      بازدید<%*/%>
+              </div>
           </div>
       </div>
     <% }) %>
+
 </div>
+     <div class="row pt-5">
+         <div class="col-12 col-md-12 d-flex justify-content-center ">
+             <a class=" btn-outline-secondary btn  p-2  " href="/posts"> پست های بیشتر →</a>
+         </div>
+     </div>
+
+
+
 
 

@@ -13,11 +13,12 @@ router.get('/logout' , (req ,res) => {
 
 // Home Routes
 router.get('/' , homeController.index);
-router.get('/courses' , courseController.index);
+router.get('/post' , courseController.index);
+router.get('/posts' , courseController.posts);
 router.get('/about-us' , homeController.about);
-router.get('/courses/:course' , courseController.single)
+router.get('/post/:course' , courseController.single);
 
 router.get('/sitemap.xml' , homeController.sitemap);
-router.get('/feed/courses' , homeController.feedCourses);
+router.get('/feed/post' , homeController.feedCourses);
 
 module.exports = router;

@@ -1,16 +1,16 @@
 <div class="row">
     <!-- Blog Post Content Column -->
-    <div class="col-lg-12 ">
+    <div class="col-lg-12  ">
         <div class="col-12 col-md-12  mb-3 text-center ">
-             <img class=" singleImageSize " src="<%= course.thumb %>" alt="<%= course.title%>">
+             <img class=" shadow-lg singleImageSize " src="<%= course.thumb %>" alt="<%= course.title%>">
         </div>
             <!-- Title -->
             <h1 class="mb-3 text-center font-weight-bold"><%= course.title %></h1>
 
             <!-- Author -->
         <p class="text-muted  text-center">
-            <span> توسط <a href="#"><%= course.user.name %></a></span>
-            -
+            <!--<span> توسط <a href="#"><%= course.user.name %></a></span>-->
+            <!-- - -->
             <span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
         </p>
 
@@ -29,39 +29,40 @@
                 <h3>مطالب پیشنهادی</h3>
             </div>
         </div>
-        <!--<div class="row">-->
-            <!--<% lastcourses.forEach(course => { %>-->
-            <!--<div class="col-12 col-md-3 mb-3 ">-->
-                <!--<div class="card">-->
-                    <!--<a href="<%= course.path() %>">-->
-                            <!--<img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>">-->
-                        <!--</a>-->
+     <%/*%>   <div class="row">
+            <% lastcourses.forEach(course => { %>
+            <div class="col-12 col-md-3 mb-3 ">
+                <div class="card">
+                    <a href="<%= course.path() %>">
+                            <img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>">
+                        </a>
 
-                    <!--<div class="card-body">-->
-                        <!--<h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>-->
-                        <!--<p class="card-text"><small><%- course.body.substr(0,80) %>...</small></p>-->
-                        <!--&lt;!&ndash;<div class=" ">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a>&ndash;&gt;-->
+                    <div class="card-body">
+                        <h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>
+                        <p class="card-text"><small><%- course.body.substr(0,80) %>...</small></p>
+                        <!--<div class=" ">-->
+                        <!--<a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a>-->
 
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                    </div>
+                    <!--<div class="card-footer text-muted">-->
+                    <!--<span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>-->
+                    <!--&lt;!&ndash;<%= course.viewCount %> بازدید&ndash;&gt;-->
                     <!--</div>-->
-                    <!--&lt;!&ndash;<div class="card-footer text-muted">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;&lt;!&ndash;<%= course.viewCount %> بازدید&ndash;&gt;&ndash;&gt;-->
-                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<% }) %>-->
-        <!--</div>-->
+                </div>
+            </div>
+            <% }) %>
+        </div>  <%*/%>
 
 
 
     </div>
 </div>
-<div class="container">
-<div class="row">    <% lastcourses.forEach(course => { %>
-    <div class="col-12 col-md-3 mb-3 ">
-        <div class="card">
+
+<div class="row ">
+    <% courses.forEach(course => { %>
+    <div class="col-12 col-md-3  mb-4 ">
+        <div class="card shadow heightCart ">
             <a href="<%= course.path() %>">
 
                 <img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>">
@@ -69,20 +70,46 @@
 
             <div class="card-body">
                 <h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>
-                <p class="card-text"><small><%- course.body.substr(0,80) %>...</small></p>
-                <!--<div class=" ">-->
-                <!--<a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a>-->
+                <p class=" card-text"><%- course.body.substr(0,130)%>...</p>
+                <%/*%> <a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a> <%*/%>
 
-                <!--</div>-->
+
             </div>
-            <!--<div class="card-footer text-muted">-->
-            <!--<span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>-->
-            <!--&lt;!&ndash;<%= course.viewCount %> بازدید&ndash;&gt;-->
-            <!--</div>-->
+            <div class="card-footer text-muted alert-secondary sidebar-heading">
+                <span> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
+                <%/*%> <%= course.viewCount %>      بازدید<%*/%>
+            </div>
         </div>
     </div>
     <% }) %>
 </div>
-</div>
-</div>
 
+
+
+<!--<div class="container">-->
+    <!--<div class="row">    <% courses.forEach(course => { %>-->
+        <!--<div class="col-12 col-md-3 mb-3 ">-->
+            <!--<div class="card">-->
+                <!--<a href="<%= course.path() %>">-->
+
+                    <!--<img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>">-->
+                <!--</a>-->
+
+                <!--<div class="card-body">-->
+                    <!--<h5 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h5>-->
+                    <!--<p class="card-text"><%- course.body.substr(0,130) %>...</p>-->
+
+                    <!--<%/*%> <a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a><%*/%>-->
+
+
+                <!--</div>-->
+                <!--<%/*%>    <div class="card-footer text-muted">-->
+                    <!--<span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>-->
+                    <!--&lt;!&ndash;<%= course.viewCount %> بازدید&ndash;&gt;-->
+                <!--</div>-->
+                <!--<%*/%>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<% }) %>-->
+    <!--</div>-->
+<!--</div>-->

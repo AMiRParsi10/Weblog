@@ -1,9 +1,3 @@
-
-<%
-
-let { search  , order } = req.query;
-
-%>
 <%/*%> search <%*/%>
 <section class="search-sec mb-5 " >
     <div class="container">
@@ -50,33 +44,8 @@ let { search  , order } = req.query;
 <%/*%>End search <%*/%>
 
 
-<form action="/post" method="GET">
-
-    <% if(search) { %>
-    <div class="form-group col-md-3">
-        <input type="hidden" name="search" value="<%= search %>">
-        <span>عبارت جستجو شده : <%= search %> <a href="/post?<%= order ? '&order=1' : '' %>" class="btn btn-sm btn-dark">حذف</a></span>
-    </div>
-    <% } %>
-
-
-
-
-    <div class="form-group col-md-3">
-        <label class="checkbox-inline">
-            <input type="checkbox" name="order" value="1" class="ml-2" <%= order === '1' ? 'checked' : '' %>>برای مشاهده از ابتدا
-        </label>
-    </div>
-
-    <div class="form-group col-md-3">
-        <button class="btn btn-secondary" type="submit">فیلتر</button>
-    </div>
-</form>
-
-<hr>
-
 <div class="row ">
-    <% courses.forEach(course => { %>
+    <% courses.docs.forEach(course => { %>
     <div class="col-12 col-md-3  mb-4 ">
         <div class="card shadow heightCart ">
             <a href="<%= course.path() %>">

@@ -18,8 +18,8 @@ const authRouter = require('app/routes/web/auth');
 router.use('/auth' , redirectIfAuthenticated.handle ,authRouter);
 
 //Handle errors
-router.all('*' , errorHandler.error404)
-router.use(errorHandler.handler)
+router.all('*' , errorHandler.error404);
+router.use(errorHandler.handler);
 
 
 module.exports = router;
