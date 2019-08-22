@@ -12,7 +12,7 @@ const CourseSchema = Schema({
     images : { type : Object , required : true },
     thumb : { type : String , required : true },
     tags : { type : String , required : true },
-    time : { type : Number , default : '00:00:00' },
+    time : { type : Number , default :0 },
     viewCount : { type : Number , default : 0 },
     commentCount : { type : String , default : 0 },
 } , { timestamps : true });
@@ -31,10 +31,10 @@ CourseSchema.methods.typeToPersian = function() {
             return 'رایگان'    
             break;
     }
-}
+};
 
 CourseSchema.methods.path = function(){
     return `/post/${this.slug}`
-}
+};
 
 module.exports = mongoose.model('Course' , CourseSchema);
