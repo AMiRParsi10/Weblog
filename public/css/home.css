@@ -7,7 +7,7 @@ p {
     font-size: medium;
 }
 .card-body p{
-    font-size: smaller;
+    font-size: small;
 }
 .Footer{
     background: linear-gradient(to right, #001e32, #001425);
