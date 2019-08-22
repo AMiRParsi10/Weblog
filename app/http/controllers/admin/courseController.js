@@ -30,6 +30,7 @@ class courseController extends controller {
 
             // create course
             let images = this.imageResize(req.file);
+            let time = new Date().getTime();
             let { title , body , type , price , tags} = req.body;
 
             let newCourse = new Course({
@@ -39,8 +40,9 @@ class courseController extends controller {
                 body,
                 type,
                 price,
+                time,
                 images ,
-                thumb : images[480],
+                thumb : images['small'],
                 tags
             });
 
@@ -83,7 +85,7 @@ class courseController extends controller {
             // check image
             if(req.file) {
                 objForUpdate.images = this.imageResize(req.file);
-                objForUpdate.thumb = objForUpdate.images[480];
+                objForUpdate.thumb = objForUpdate.images['small'];
             }
 
             delete req.body.images;
@@ -125,8 +127,10 @@ class courseController extends controller {
 
         const resize = size => {
             let imageName = `${imageInfo.name}-${size}${imageInfo.ext}`;
+            
+            let name = size === 480 ? 'small' : 720 ? 'medium' : 1080 ? 'large' : 'undefined_size';
 
-            addresImages[size] = this.getUrlImage(`${image.destination}/${imageName}`);
+            addresImages[name] = this.getUrlImage(`${image.destination}/${imageName}`);
 
             sharp(image.path)
                 .resize(size , null)
