@@ -21,7 +21,7 @@
 
 
 
-    <div class="row  m-2">
+    <div class="row ">
         <div class="d-inline bg-dark text-white m-3 p-2 ">
             <h3 > سر تیتر مجله</h3>
         </div>
@@ -34,7 +34,7 @@
             <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>
         <div class="card-body shadow heightHeadCart">
             <a href="<%= head.path() %>" class="text-decoration-none" ><h4 class="card-title text-dark "><%= head.title%></h4></a>
-          <div class="d-none d-sm-block"> <p class="card-text "><%- head.body.substr(0,180)%>...</p></div>
+          <div class="d-none d-sm-block"> <p class="card-text "><%- head.sum.substr(0 , 180)%>...</p></div>
        <%/*%>     <a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a><%*/%>
 
         </div>
@@ -73,7 +73,7 @@
      <%*/%>
 
     <div class="row">
-        <div class="d-inline p-2 bg-dark text-white  m-3 p-2">
+        <div class="d-inline p-2 bg-dark text-white  m-3">
             <h3 >آخرین خواندنی ها</h3>
         </div>
     </div>
@@ -135,7 +135,7 @@
 
               <div class="card-body ">
                 <h6 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h6>
-                  <p class=" card-text"><%- course.body.substr(0,130)%>...</p>
+                  <p class=" card-text"><%- course.sum.substr(0,130)%>...</p>
                      <%/*%> <a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a> <%*/%>
 
 

@@ -12,6 +12,7 @@ const CourseSchema = Schema({
     images : { type : Object , required : true },
     thumb : { type : String , required : true },
     tags : { type : String , required : true },
+    sum : { type : String , required : true},
     time : { type : Number , default :0 },
     viewCount : { type : Number , default : 0 },
     commentCount : { type : String , default : 0 },
@@ -26,9 +27,9 @@ CourseSchema.methods.typeToPersian = function() {
             break;
         case 'vip':
             return 'اعضای ویژه'
-        break;    
+        break;
         default:
-            return 'رایگان'    
+            return 'رایگان'
             break;
     }
 };

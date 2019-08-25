@@ -17,7 +17,7 @@ class courseValidator extends validator {
                     }
                     let course = await Course.findOne({ slug : this.slug(value) });
                     if(course) {
-                        throw new Error('چنین دوره ای با این عنوان قبلا در سایت قرار داد شده است')
+                        throw new Error('چنین مقاله ای با این عنوان قبلا در سایت قرار داد شده است')
                     }
                 }),
 
@@ -40,7 +40,10 @@ class courseValidator extends validator {
 
             check('body')
                 .isLength({ min : 20 })
-                .withMessage('متن دوره نمیتواند کمتر از 20 کاراکتر باشد'),
+                .withMessage('متن مقاله نمیتواند کمتر از 20 کاراکتر باشد'),
+            check('sum')
+                .isLength({ min : 10 })
+                .withMessage('متن خلاصه نمیتواند کمتر از 20 کاراکتر باشد'),
 
             check('price')
                 .not().isEmpty()

@@ -99,6 +99,10 @@ header,
     border-radius:0;
 }
 
+#text2,
+#myButton {
+    display: none;
+}
 
 
 
