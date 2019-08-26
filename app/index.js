@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const http = require('http');
+const path = require('path');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const validator = require('express-validator');
@@ -44,7 +46,8 @@ module.exports = class Application {
     setConfig() {
         require('app/passport/passport-local');
         // require('app/passport/passport-google');
- 
+
+        app.use(morgan('dev'))
         app.use(express.static(config.layout.public_dir));
         app.set('view engine', config.layout.view_engine);
         app.set('views' , config.layout.view_dir);
@@ -64,7 +67,7 @@ module.exports = class Application {
         app.use(passport.initialize());
         app.use(passport.session());
         app.use(rememberLogin.handle);
-
+        app.use(express.static(path.join(__dirname, 'images')));
         app.use((req , res , next) => {
             app.locals = new Helpers(req, res).getObjects();
             next();

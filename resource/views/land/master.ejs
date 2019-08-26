@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%- defineContent('title') || 'مجله فیتکس'  %></title>
+    <title><%- defineContent('title') || ' فیتکس'  %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="مجله ورزشی فیتکس تمامی نیاز های علمی و تخصصی شما در مورد ورزش , سلامت و تغذیه را پشتیبانی میکند. ">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -30,26 +29,17 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
               <ul class="navbar-nav ml-auto">
-                <!--<li class="nav-item font-weight-bold pr-2" >-->
-                  <!--<a class="nav-link  text-light" href="/">صفحه اصلی</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
+                <li class="nav-item font-weight-bold " >
+                  <a class="nav-link  text-light" href="/">صفحه اصلی</span></a>
+                </li>
+                <li class="nav-item">
                   <!--<a class="nav-link" href="/courses">دوره ها</a>-->
-                <!--</li>-->
-                <li class="nav-item  mr-2">
+                </li>
+                <li class="nav-item">
                   <a class="nav-link text-light" href="/about-us">درباره ما</a>
                 </li>
-
-                 <li class="nav-item  mr-2">
-                  <a class="nav-link text-light" href="/posts">همه مطالب</a>
-                </li>
-
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                  </li>
-                  <li class="nav-item btn-dark">
-                      <a class="nav-link text-light font-weight-bold" href="/land">معرفی اپلیکیشن</a>
-                  </li>
                     <% if(auth.check) { %>
                       <li><a class="btn btn-success btn-sm ml-2" href="/admin">پنل کاربری</a></li>
                       <li><a class="btn btn-danger btn-sm" href="/logout">خروج</a></li>
