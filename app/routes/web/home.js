@@ -17,6 +17,7 @@ router.get('/' , homeController.index);
 router.get('/post' , courseController.index);
 router.get('/posts' , courseController.posts);
 router.get('/land' , landController.index);
+router.get('/home' , landController.home);
 router.get('/about-us' , homeController.about);
 router.get('/post/:course' , courseController.single);
 

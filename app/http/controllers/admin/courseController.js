@@ -31,11 +31,12 @@ class courseController extends controller {
             // create course
             let images = this.imageResize(req.file);
             let time = new Date().getTime();
-            let { title , body , type , price , tags , sum } = req.body;
+            let { title , body , type , price , tags , sum , author } = req.body;
 
             let newCourse = new Course({
                 user : req.user._id,
                 title,
+                author,
                 slug : this.slug(title),
                 body,
                 type,
@@ -92,7 +93,7 @@ class courseController extends controller {
             delete req.body.images;
             objForUpdate.slug = this.slug(req.body.title);
 
-            await Course.findByIdAndUpdate(req.params.id , { $set : { ...req.body , ...objForUpdate }})
+            await Course.findByIdAndUpdate(req.params.id , { $set : { ...req.body , ...objForUpdate }});
             return res.redirect('/admin/courses');
         } catch(err) {
             next(err);

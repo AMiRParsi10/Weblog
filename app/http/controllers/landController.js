@@ -8,10 +8,10 @@ class landController extends controller {
         const title = 'اپلیکیشن فیتکس';
         res.render('land/index', {title});
     }
-    async homeland(req, res) {
+    async home(req, res) {
 
-        const title = 'اپلیکیشن فیتکس';
-        res.render('land/home', {title});
+        const title = ' فیتکس';
+        res.render('land/index', {title});
     }
 
 

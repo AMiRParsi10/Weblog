@@ -44,6 +44,12 @@ class courseValidator extends validator {
             check('sum')
                 .isLength({ min : 10 })
                 .withMessage('متن خلاصه نمیتواند کمتر از 20 کاراکتر باشد'),
+            check('author')
+                .isLength({ min : 3 })
+                .withMessage('نام نویسنده نمیتواند کمتر از 3 کاراکتر باشد'),
+
+
+
 
             check('price')
                 .not().isEmpty()
