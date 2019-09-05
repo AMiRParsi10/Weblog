@@ -34,10 +34,11 @@ p {
     width: 40px;
     height: 40px;
 }
-/*live*/
+live
 .view {
-    background: url("https://images.unsplash.com/photo-1556817411-df27c6ec6e4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80")no-repeat center center;
+    background: url("http://localhost:3001/undraw_connected_world_wuay.png")no-repeat center center;
     background-size: cover;
+
 }
 @media (min-width: 768px) {
     .view {
@@ -56,7 +57,7 @@ header,
     height: 100%;
 }
 .height {
-    padding: 14%;
+    padding: 5%;
 }
 
 /* end*/

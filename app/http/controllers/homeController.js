@@ -10,7 +10,7 @@ class homeController extends controller {
 
 
 
-        let headers = await Course.find({}).sort({ createdAt : -1 }).skip(0).limit(3).exec();
+        let headers = await Course.find({}).sort({ createdAt : -1 }).limit(3).exec();
         let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit(8).exec();
         res.render('home/index' , { courses , headers });
 
@@ -35,7 +35,7 @@ class homeController extends controller {
                 courses.forEach(course => {
                     sitemap.add({ url : course.path() , changefreq : 'weekly' , priority: 0.8})
 
-                })
+                });
 
             res.header('content-type' , 'application/xml');
             res.send(sitemap.toString());

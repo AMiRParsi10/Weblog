@@ -12,7 +12,7 @@ class courseController extends controller {
         //     query.title = new RegExp(req.query.search , 'gi');
 
 
-        let courses = Course.find({ $or : [{ title :new RegExp(req.query.search , 'gi') } , { body : new RegExp(req.query.search , 'gi')} ] }).sort({ createdAt : -1});;
+        let courses = Course.find({ $or : [{ title :new RegExp(req.query.search , 'gi') } , { body : new RegExp(req.query.search , 'gi')} ] }).sort({ createdAt : -1});
 
 
         if(req.query.order)
