@@ -1,30 +1,42 @@
 const controller = require('app/http/controllers/controller');
 const Course = require('app/models/course');
+const Category = require('app/models/category');
 
 class courseController extends controller {
 
 
     async index(req , res) {
-
+        // return res.json(req.query);
         let query = {};
+    let { search  , category } = req.query;
 
-        // if(req.query.search)
-        //     query.title = new RegExp(req.query.search , 'gi');
+        // if(search && search !== '*') {
+        //    query.body = new RegExp(search, 'gi');
+        //     // query.title = new RegExp(search , 'gi');
+        // }
 
 
-        let courses = Course.find({ $or : [{ title :new RegExp(req.query.search , 'gi') } , { body : new RegExp(req.query.search , 'gi')} ] }).sort({ createdAt : -1});
 
+        if(category && category !== 'all') {
+            category = await Category.findOne({ slug : category});
+            if(category)
+                query.categories = { $in : [ category.id ]}
+        }
+
+        let courses = Course.find({...query  , $or : [{ title :new RegExp(req.query.search , 'gi') } , { body : new RegExp(req.query.search , 'gi')}   ] , }).sort({ createdAt : -1});
+        // let courses = Course.find({ ...query })
 
         if(req.query.order)
             courses.sort({ createdAt : 1});
 
         courses = await courses.exec();
 
-        res.render('home/courses' , { courses });
+        let categories = await Category.find({});
+        res.render('home/courses' , { courses , categories });
     }
 
     async single(req , res) {
-
+        let categories = await Category.find({ parent : null }).populate('childs').exec();
         let lastCourses = await Course.find({}).sort({ createdAt : -1 }).skip(2).limit(4).exec();
         let courses = await Course.find({}).sort({ createdAt : -1 }).skip(2).limit(4).exec();
         let course = await Course.findOne({ slug : req.params.course })
@@ -36,15 +48,16 @@ class courseController extends controller {
             ]);
         // let canUserUse = await this.canUse(req , course);
 
-        res.render('home/single-course' , { course , lastcourses: lastCourses , courses});
+        res.render('home/single-course' , { course , lastcourses: lastCourses , courses , categories});
     }
 
 
     async posts(req , res) {
         try {
             let page = req.query.page || 1;
-            let courses = await Course.paginate({} , { page , sort : { createdAt : -1 } , limit : 8 });
-            res.render('home/posts',  { title : 'مقاله ها' , courses });
+            let courses = await Course.paginate({} , { page , sort : { createdAt : -1 } , limit : 12 });
+            let categories = await Category.find({});
+            res.render('home/posts',  { title : 'مقاله ها' , courses , categories });
         } catch (err) {
             next(err);
         }

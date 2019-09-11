@@ -4,12 +4,13 @@ const mongoosePaginate = require('mongoose-paginate');
 
 const CourseSchema = Schema({
     user : { type : Schema.Types.ObjectId , ref : 'User'},
+    categories : [{ type : Schema.Types.ObjectId , ref : 'Category' }],
     title : { type : String , required : true },
     author : { type : String , required : false },
     slug : { type : String , required : true },
-    type : { type : String , required : true },
+    type : { type : String , required : false },
     body : { type : String , required : true },
-    price : { type : String , required : true },
+    price : { type : String , required : false },
     images : { type : Object , required : true },
     thumb : { type : String , required : true },
     tags : { type : String , required : true },

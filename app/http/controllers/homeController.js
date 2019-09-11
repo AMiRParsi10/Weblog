@@ -1,5 +1,6 @@
 const controller = require('app/http/controllers/controller');
 const Course = require('app/models/course');
+const Category = require('app/models/category');
 const sm = require('sitemap');
 const rss = require('rss');
 const striptags = require('striptags');
@@ -9,10 +10,10 @@ class homeController extends controller {
     async index(req , res) {
 
 
-
+        let categories = await Category.find({});
         let headers = await Course.find({}).sort({ createdAt : -1 }).limit(3).exec();
         let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit(8).exec();
-        res.render('home/index' , { courses , headers });
+        res.render('home/index' , { courses , headers , categories });
 
 
 

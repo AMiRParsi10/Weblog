@@ -47,10 +47,6 @@ class courseValidator extends validator {
             check('author')
                 .isLength({ min : 3 })
                 .withMessage('نام نویسنده نمیتواند کمتر از 3 کاراکتر باشد'),
-
-
-
-
             check('price')
                 .not().isEmpty()
                 .withMessage('قیمت دوره نمیتواند خالی بماند'),
