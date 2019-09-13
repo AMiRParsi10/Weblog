@@ -46,8 +46,8 @@
 
         </div>
         <div class="card-footer text-muted ">
-            <%= date(head.createdAt).format('jD jMMMM jYYYY') %>
-            <a href="https://fitexapp.ir/">فیتکس</a>
+            <span class="badge-danger p-1"> <%= date(head.createdAt).format('jD jMMMM jYYYY') %></span> - <span class="badge-secondary p-1"><%= head.timeline %></span>
+
         </div>
         </div>
        <% }) %>
@@ -59,43 +59,37 @@
 
 
 
-   <%/*%> <div class="row text-center justify-content-center mb-5">
-        <% headers.forEach(head => { %>
-        <div class="col-12 col-md-7 mb-5 ">
-            <a href="<%= head.path() %> "> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"> </a>
-            <div class="card-body">
-                <a href="<%= head.path() %>" class="text-decoration-none" > <strong><h3 class="card-title text-dark "><%= head.title%></h3></strong>  </a>
-               <div class="d-none d-sm-block"><p class="card-text "><small><%- head.body.substr(0,350)%>...</small></p></div>
 
 
+
+<!--categories-->
+<div class="m-5">
+    <h2 class="d-flex justify-content-center">دسته بندی مطالب</h2>
+</div>
+
+<div class="row">
+
+    <% categories.forEach(category => { %>
+
+    <div class="col-12 col-md-3 mb-3 badge-dark p-4 ">
+    <div class="card text-white   p-3 col-12 " style="background-color: #667eea">
+            <div class="card-body d-flex justify-content-center">
+                <a class="text-white font-weight-bold text-decoration-none " href="/post?category=<%= category.slug %>"><h4><%= category.name %></h4></a>
             </div>
-            <div class="card-footer text-muted d-none d-sm-block ">
-                <%= date(head.createdAt).format('jD jMMMM jYYYY') %>
-                <a href="https://fitexapp.ir/">فیتکس</a>
-            </div>
-        </div>
-        <% }) %>
-
+        <% if(category.childs) { %>
+        <ul class="p-1">
+            <% category.childs.forEach(cate => { %>
+            <li>
+                <a class="text-white badge-secondary " href="/post?category=<%= cate.slug %>"><%= cate.name %></a>
+            </li>
+            <% }) %>
+        </ul>
+        <% } %>
     </div>
-     <%*/%>
-
-    <div class="row">
-        <div class=" ">
-            <div class=" p-2 bg-dark text-white  m-3">
-                <h3 >آخرین خواندنی ها</h3>
-            </div>
-
-        </div>
-
-        <div class="">
-            <div class=" m-3  ">
-
-                <a class=" btn-danger btn   p-3  font-weight-bold "  href="/posts"> پست های بیشتر →</a>
-            </div>
-
-        </div>
-
     </div>
+    <% }) %>
+</div>
+<!--end of categories-->
 
 
 
@@ -143,6 +137,26 @@
                           </section>
 
      <%/*%>End search <%*/%>
+<div class="row ">
+    <div class="  ">
+        <div class=" p-2 bg-dark text-white  m-3">
+            <h4 >آخرین خواندنی ها</h4>
+        </div>
+
+    </div>
+
+    <div class="">
+        <div class=" m-3  ">
+
+            <a class=" btn-danger btn   p-3  font-weight-bold "  href="/posts"> پست های بیشتر →</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+
 
 <div class="row ">
     <% courses.forEach(course => { %>
@@ -161,8 +175,8 @@
 
               </div>
               <div class="card-footer text-muted alert-secondary sidebar-heading">
-                  <span> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
-              <%/*%> <%= course.viewCount %>      بازدید<%*/%>
+                  <span class="badge-danger p-1"> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span> - <span class="badge-secondary p-1"><%= course.timeline %></span>
+
               </div>
           </div>
       </div>

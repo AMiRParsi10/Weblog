@@ -8,11 +8,14 @@
             <h1 class="mb-3 text-center font-weight-bold"><%= course.title %></h1>
 
             <!-- Author -->
-        <p class="text-muted  text-center">
+        <div class="  text-center">
             <!--<span> توسط <a href="#"><%= course.user.name %></a></span>-->
             <!-- - -->
-            <span>ارسال شده در <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
-        </p>
+            <span class="badge-danger p-1 text-center"> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span> - <span class="badge-secondary p-1"><%= course.timeline %></span>
+            <hr>
+            <div > <h5 class="p-1 text-center ">  نویسنده مطلب : <%= course.author %></h5>
+            </div>
+        </div>
 
             <hr>
             <!-- Post Content -->
@@ -23,7 +26,13 @@
 
 
         <hr>
+            <div class="">
+                <span>تگ ها : </span> <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="" class="btn btn-secondary"><%= course.tags%></button>
 
+                </div>
+
+            </div>
         <div class="row m-3">
             <div class="d-inline p-2 bg-dark text-white  m-3">
                 <h3>مطالب پیشنهادی</h3>
@@ -76,8 +85,8 @@
 
             </div>
             <div class="card-footer text-muted alert-secondary sidebar-heading">
-                <span> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
-                <%/*%> <%= course.viewCount %>      بازدید<%*/%>
+                <span class="badge-danger p-1"> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span> - <span class="badge-secondary p-1"><%= course.timeline %></span>
+
             </div>
         </div>
     </div>

@@ -16,10 +16,12 @@ class courseController extends controller {
         }
     }
 
-    create(req , res) {
+ async create(req , res) {
+
+        let categories = await Category.find({}) ;
 
 
-        res.render('admin/courses/create');
+        res.render('admin/courses/create', { categories });
     }
 
     async store(req , res , next) {
@@ -34,7 +36,7 @@ class courseController extends controller {
             // create course
             let images = this.imageResize(req.file);
             let time = new Date().getTime();
-            let { title , body , type , price , tags , sum , author } = req.body;
+            let { title , body , type , price , tags , sum , author , timeline } = req.body;
 
             let newCourse = new Course({
                 user : req.user._id,
@@ -45,6 +47,7 @@ class courseController extends controller {
                 type,
                 price,
                 time,
+                timeline,
                 images ,
                 thumb : images['small'],
                 tags ,

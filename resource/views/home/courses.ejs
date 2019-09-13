@@ -104,8 +104,8 @@ let { search  , order , category } = req.query;
 
             </div>
             <div class="card-footer text-muted alert-secondary sidebar-heading">
-                <span> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
-                <%/*%> <%= course.viewCount %>  بازدید <%*/%>
+                <span class="badge-danger p-1"> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span> - <span class="badge-secondary p-1"><%= course.timeline %></span>
+
             </div>
         </div>
     </div>

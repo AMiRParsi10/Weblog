@@ -47,7 +47,7 @@ let { category } = req.query;
 
 <%/*%>End search <%*/%>
 
->
+
 
 <div class="row ">
     <% courses.docs.forEach(course => { %>
@@ -66,8 +66,8 @@ let { category } = req.query;
 
             </div>
             <div class="card-footer text-muted alert-secondary sidebar-heading">
-                <span> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span>
-                <%/*%> <%= course.viewCount %>      بازدید<%*/%>
+                <span class="badge-danger p-1"> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span> - <span class="badge-secondary p-1"><%= course.timeline %></span>
+
             </div>
         </div>
     </div>
@@ -77,3 +77,32 @@ let { category } = req.query;
 <div class="pt-5">
     <%- include(viewPath('layouts/pagination') ,{ pagination : courses}) %>
 </div>
+
+<!--categories-->
+<div class="m-5">
+    <h2 class="d-flex justify-content-center">دسته بندی مطالب</h2>
+</div>
+
+<div class="row">
+
+    <% categories.forEach(category => { %>
+
+    <div class="col-12 col-md-3 mb-3 badge-dark p-4 ">
+        <div class="card text-white   p-3 col-12 " style="background-color: #667eea">
+            <div class="card-body d-flex justify-content-center">
+                <a class="text-white font-weight-bold text-decoration-none " href="/post?category=<%= category.slug %>"><h4><%= category.name %></h4></a>
+            </div>
+            <% if(category.childs) { %>
+            <ul class="p-1">
+                <% category.childs.forEach(cate => { %>
+                <li>
+                    <a class="text-white badge-secondary " href="/post?category=<%= cate.slug %>"><%= cate.name %></a>
+                </li>
+                <% }) %>
+            </ul>
+            <% } %>
+        </div>
+    </div>
+    <% }) %>
+</div>
+<!--end of categories-->
