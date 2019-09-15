@@ -1,3 +1,39 @@
+<!--nav with category-->
+<nav class="navbar navbar-expand-md navbar-dark ">
+    <div class="container">
+        <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#dw" aria-controls="dw" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse p-1 " id="dw">
+            <ul class="navbar-nav ml-auto mr-auto ">
+
+                <% categories.forEach(category => { %>
+                <li class="nav-item dropdown m-2 p-1  ">
+                    <a class="nav-link dropdown-toggle d-inline badge-dark text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= category.name%>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <% if(category.childs) { %>
+                        <ul class="p-1 badge-dark  ">
+                            <% category.childs.forEach(cate => { %>
+                            <li class="d-block m-1 d-flex justify-content-center">
+                                <a class="text-white text-decoration-none  font-weight-normal " href="/post?category=<%= cate.slug %>"><%= cate.name %></a>
+                            </li>
+                            <% }) %>
+                        </ul>
+                        <% } %>
+                    </div>
+                </li>
+                <% }) %>
+
+
+            </ul>
+
+        </div>
+    </div>
+
+</nav>
+
 <%/*%> search <%*/%>
 <%
 let { category } = req.query;
@@ -78,31 +114,3 @@ let { category } = req.query;
     <%- include(viewPath('layouts/pagination') ,{ pagination : courses}) %>
 </div>
 
-<!--categories-->
-<div class="m-5">
-    <h2 class="d-flex justify-content-center">دسته بندی مطالب</h2>
-</div>
-
-<div class="row">
-
-    <% categories.forEach(category => { %>
-
-    <div class="col-12 col-md-3 mb-3 badge-dark p-4 ">
-        <div class="card text-white   p-3 col-12 " style="background-color: #667eea">
-            <div class="card-body d-flex justify-content-center">
-                <a class="text-white font-weight-bold text-decoration-none " href="/post?category=<%= category.slug %>"><h4><%= category.name %></h4></a>
-            </div>
-            <% if(category.childs) { %>
-            <ul class="p-1">
-                <% category.childs.forEach(cate => { %>
-                <li>
-                    <a class="text-white badge-secondary " href="/post?category=<%= cate.slug %>"><%= cate.name %></a>
-                </li>
-                <% }) %>
-            </ul>
-            <% } %>
-        </div>
-    </div>
-    <% }) %>
-</div>
-<!--end of categories-->

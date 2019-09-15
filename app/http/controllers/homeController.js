@@ -10,7 +10,7 @@ class homeController extends controller {
     async index(req , res) {
 
 
-        let categories = await Category.find({});
+        let categories = await Category.find({ parent : null }).populate('childs').exec();
         let headers = await Course.find({}).sort({ createdAt : -1 }).limit(3).exec();
         let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit(8).exec();
         res.render('home/index' , { courses , headers , categories });

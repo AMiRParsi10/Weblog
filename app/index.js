@@ -47,7 +47,7 @@ module.exports = class Application {
         require('app/passport/passport-local');
         // require('app/passport/passport-google');
 
-        app.use(morgan('dev'))
+        app.use(morgan('dev'));
         app.use(express.static(config.layout.public_dir));
         app.set('view engine', config.layout.view_engine);
         app.set('views' , config.layout.view_dir);
