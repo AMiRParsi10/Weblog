@@ -22,6 +22,6 @@ router.get('/about-us' , homeController.about);
 router.get('/post/:course' , courseController.single);
 
 router.get('/sitemap.xml' , homeController.sitemap);
-router.get('/feed/post' , homeController.feedCourses);
+router.get('/feed/posts' , homeController.feedCourses);
 
 module.exports = router;
