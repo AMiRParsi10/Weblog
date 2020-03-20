@@ -13,6 +13,10 @@ router.use('/admin' , redirectIfNotAdmin.handle , adminRouter);
 const homeRouter = require('app/routes/web/home');
 router.use('/' , homeRouter);
 
+// Landing Router
+const landRouter = require('app/routes/web/landing');
+router.use('/land' , landRouter);
+
 // Auth Router
 const authRouter = require('app/routes/web/auth');
 router.use('/auth' , redirectIfAuthenticated.handle ,authRouter);
