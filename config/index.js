@@ -10,6 +10,6 @@ module.exports = {
     service,
     port : process.env.PORT,
     cookie_secretkey : process.env.COOKIE_SECRETKEY,
-    debug : true ,
+    debug : false ,
     siteurl : process.env.WEBSITE_URL
 };
