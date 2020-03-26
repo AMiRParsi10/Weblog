@@ -11,16 +11,24 @@ class homeController extends controller {
 
 
         let categories = await Category.find({ parent : null }).populate('childs').exec();
-        let headers = await Course.find({}).sort({ createdAt : -1 }).limit(3).exec();
-        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit(8).exec();
-        res.render('home/index' , { courses , headers , categories });
+        let header1 = await Course.find({}).sort({ createdAt : -1 }).limit(1).exec();
+        let header2 = await Course.find({}).sort({ createdAt : -1 }).skip(1).limit(1).exec();
+        let header3 = await Course.find({}).sort({ createdAt : -1 }).skip(2).limit(1).exec();
+        let courses = await Course.find({}).sort({ createdAt : -1 }).skip(3).limit(6).exec();
+        let headers = await Course.find({}).sort({ createdAt : -1 }).skip(0).limit(3).exec();
+        let oldest = await Course.find({}).sort({ createdAt : +1 }).skip(8).limit(3).exec();
+
+        res.render('home/index' , { courses:courses , header1:header1 ,header2:header2, categories , header3 ,oldest , headers});
 
 
 
     }
 
     async about(req , res) {
-        res.render('home/about');
+        let categories = await Category.find({ parent : null }).populate('childs').exec();
+        let headers = await Course.find({}).sort({ createdAt : -1 }).skip(0).limit(3).exec();
+        let oldest = await Course.find({}).sort({ createdAt : +1 }).skip(8).limit(3).exec();
+        res.render('home/about' ,{ categories  ,oldest , headers});
     }
 
     async sitemap(req , res , next) {
@@ -63,7 +71,7 @@ class homeController extends controller {
                     url : course.path(),
                     author : course.user.name
                 })
-            })
+            });
 
             res.header('Content-type' , 'application/xml');
             res.send(feed.xml());

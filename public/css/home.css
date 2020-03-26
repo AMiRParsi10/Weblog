@@ -35,7 +35,7 @@ p {
     height: 40px;
 }
 live
-.view {
+/* .view {
     background: url("http://localhost:3001/undraw_connected_world_wuay.png")no-repeat center center;
     background-size: cover;
 
@@ -45,19 +45,9 @@ live
         overflow: visible;
 
     }
-}
+} */
 .navbar {
     z-index: 1;
-}
-
-html,
-body,
-header,
-.view {
-    height: 100%;
-}
-.height {
-    padding: 5%;
 }
 
 /* end*/
@@ -72,8 +62,8 @@ header,
     height : 455px ;
 }
 .heightHeadCart {
-    height : 50% ;
-}
+    height : 70% ;
+} */
 
 /*search box css start here*/
 .search-sec{

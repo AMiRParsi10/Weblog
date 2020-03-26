@@ -6,6 +6,7 @@ class courseController extends controller {
 
 
     async index(req , res) {
+
         // return res.json(req.query);
         let query = {};
     let { search  , category } = req.query;
@@ -32,12 +33,16 @@ class courseController extends controller {
         courses = await courses.exec();
 
         let categories = await Category.find({ parent : null }).populate('childs').exec();
-        res.render('home/courses' , { courses , categories });
+        let headers = await Course.find({}).sort({ createdAt : -1 }).skip(0).limit(3).exec();
+        let oldest = await Course.find({}).sort({ createdAt : +1 }).skip(8).limit(3).exec();
+        res.render('home/courses' , { courses  , categories , headers , oldest });
     }
 
     async single(req , res) {
         let categories = await Category.find({ parent : null }).populate('childs').exec();
         let lastCourses = await Course.find({}).sort({ createdAt : -1 }).skip(2).limit(4).exec();
+        let headers = await Course.find({}).sort({ createdAt : -1 }).skip(0).limit(3).exec();
+        let oldest = await Course.find({}).sort({ createdAt : +1 }).skip(8).limit(3).exec();
         let courses = await Course.find({}).sort({ createdAt : -1 }).skip(2).limit(4).exec();
         let course = await Course.findOne({ slug : req.params.course })
             .populate([
@@ -48,16 +53,18 @@ class courseController extends controller {
             ]);
         // let canUserUse = await this.canUse(req , course);
 
-        res.render('home/single-course' , { course , lastcourses: lastCourses , courses , categories});
+        res.render('home/single-course' , { course , lastcourses: lastCourses , courses , categories , headers , oldest});
     }
 
 
     async posts(req , res) {
         try {
+            let headers = await Course.find({}).sort({ createdAt : -1 }).skip(0).limit(3).exec();
+            let oldest = await Course.find({}).sort({ createdAt : +1 }).skip(8).limit(3).exec();
             let page = req.query.page || 1;
-            let courses = await Course.paginate({} , { page , sort : { createdAt : -1 } , limit : 12 });
+            let courses = await Course.paginate({} , { page , sort : { createdAt : -1 } , limit : 9 });
             let categories = await Category.find({ parent : null }).populate('childs').exec();
-            res.render('home/posts',  { title : 'مقاله ها' , courses , categories });
+            res.render('home/posts',  { title : 'مقاله ها' , courses , categories , headers , oldest });
         } catch (err) {
             next(err);
         }

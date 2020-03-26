@@ -1,11 +1,12 @@
 const controller = require('app/http/controllers/controller');
 const passport = require('passport');
+const Course = require('../../../models/course');
 
 class loginController extends controller {
     
     showLoginForm(req , res) {
         const title = 'صفحه ورود';
-        res.render('home/auth/login' , { title });
+        res.render('auth/login' , { title  });
     }
    // recaptcha : this.recaptcha.render() ,
 
@@ -14,8 +15,8 @@ class loginController extends controller {
         let result = await this.validationData(req);
         if(result) {
             return this.login(req, res , next)
-        } 
-        
+        }
+
         this.back(req,res);
     }
 

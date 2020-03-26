@@ -1,120 +1,396 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%- defineContent('title') || 'مجله فیتکس'  %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="اپلیکیشن و مجله ورزشی فیتکس تمامی نیاز های علمی و تخصصی شما در مورد ورزش , سلامت و تغذیه را پشتیبانی میکند. ">
-    <meta name="keywords" content="اپلیکیشن فیتکس , فیتکس , مجله فیتکس , وبسایت فیتکس , فیتنس, تمرین در منزل, مقالات ورزشی ,سلامت ,تغذیه, ورزش بانوان  ,دختران ورزشکار, پسران ورزشکار, تمرین بدون نیاز به تجهیزات , باشگاه ورزشی, تناسب اندام ,زیبایی ظاهری , برنامه های تمرینی, بدنسازی ,باشگاه ورزشی , تیم فیتکس   ">
-    <meta name="google-site-verification" content="8_f4erw6ZcM-muO0yKU5o16H7pPnuyPYfMIn0E-0b8k" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%- defineContent('title') || 'مجله فیتکس'  %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="اپلیکیشن و مجله ورزشی فیتکس تمامی نیاز های علمی و تخصصی شما در مورد ورزش , سلامت و تغذیه را پشتیبانی میکند. ">
+  <meta name="keywords"
+    content="اپلیکیشن فیتکس , فیتکس , مجله فیتکس , وبسایت فیتکس , فیتنس, تمرین در منزل, مقالات ورزشی ,سلامت ,تغذیه, ورزش بانوان  ,دختران ورزشکار, پسران ورزشکار, تمرین بدون نیاز به تجهیزات , باشگاه ورزشی, تناسب اندام ,زیبایی ظاهری , برنامه های تمرینی, بدنسازی ,باشگاه ورزشی , تیم فیتکس   ">
+  <meta name="google-site-verification" content="8_f4erw6ZcM-muO0yKU5o16H7pPnuyPYfMIn0E-0b8k" />
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap-rtl.min.css" />
+   <!-- <link rel="stylesheet" href="/css/owl.carousel.css">
+   <link rel="stylesheet" href="/css/owl.theme.default.min.css"> -->
+  <link rel="stylesheet" href="/css/mdb.min.css">
+  <link rel="stylesheet" href="/css/multi-range.min.css">
+  <link rel="stylesheet" href="/css/vazir.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/main.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/bootstrap-rtl.min.css" />
-    <link rel="stylesheet" href="/css/vazir.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/admin.css">
 
-
-    <%- style %>
+  <%- style %>
 </head>
+
 <body>
-
-
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand bg-secondary p-2" href="/">مجله ورزشی فیتکس</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+  <div class="modal fade serach-modal-form" id="modalLoginAvatar" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Body-->
+        <div class="modal-body text-center mb-1">
+          <form class="form-inline mr-auto " action="/post" method="get">
+            <input type="text" class="form-control search-slt" name="search" placeholder=" دنبال چی میگردی؟" />
+            <button class="btn btn-success btn-rounded btn-sm my-0" type="submit">
+              جستجو
             </button>
+          </form>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <div class="modal fade" id="modalCotactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <!--Modal: Contact form-->
+    <div class="modal-dialog cascading-modal" role="document">
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-              <ul class="navbar-nav ml-auto">
-                <!--<li class="nav-item font-weight-bold pr-2" >-->
-                  <!--<a class="nav-link  text-light" href="/">صفحه اصلی</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                  <!--<a class="nav-link" href="/courses">دوره ها</a>-->
-                <!--</li>-->
-                <li class="nav-item  mr-2">
-                  <a class="nav-link text-light font-weight-normal" href="/about-us">درباره ما</a>
-                </li>
+      <!--Content-->
+      <div class="modal-content">
 
-                 <li class="nav-item  mr-2">
-                  <a class="nav-link text-light font-weight-normal" href="/posts">همه مطالب</a>
-                </li>
+        <!--Header-->
+        <div class="modal-header info-color white-text">
+          <h4 class="title">
+            <i class="fa fa-pencil-alt" ></i> تماس با ما</h4>
+          <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
 
-              </ul>
-              <ul class="nav navbar-nav navbar-right ">
-                  </li>
-                  <li class="">
-                  <li><a class="btn btn-outline-info btn-sm p-2 mt-2 ml-2" href="/land">معرفی اپلیکیشن</a></li>
-                  </li>
-                    <% if(auth.check) { %>
-                      <li><a class="btn btn-primary btn-sm ml-2 " href="/admin">پنل کاربری</a></li>
-                      <li><a class="btn btn-outline-danger btn-sm" href="/logout">خروج</a></li>
-                    <% } else { %>
-                  <a class="navbar" href="https://fitexapp.ir/">
+          <!-- Default input name -->
+          <label for="defaultFormNameModalEx">نام شما(الزامی*):</label>
+          <input type="text" id="defaultFormNameModalEx" class="form-control form-control-sm">
 
-                      <!--<img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">-->
-                      <img src="http://mag.fitexapp.ir/fitexlogowhite.png" width="110" height="40" class="d-inline-block align-top" alt="">
+          <br>
 
+          <!-- Default input email -->
+          <label for="defaultFormEmailModalEx">ایمل شما (الزامی*):</label>
+          <input type="password" id="defaultFormEmailModalEx" class="form-control form-control-sm">
+
+          <br>
+
+          <br>
+
+          <!-- Default textarea message -->
+          <label for="defaultFormMessageModalEx">پیام شما:</label>
+          <textarea type="text" id="defaultFormMessageModalEx" class="md-textarea form-control"></textarea>
+
+          <div class="text-center mt-4 mb-2">
+            <button class="btn btn-info">ارسال 
+              <i class="fa fa-send ml-2"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+    <!--/Modal: Contact form-->
+  </div>
+
+  <nav class="navbar navbar-expand-lg scrolling-navbar fixed-top navbar-dark info-color" id="nav-bar">
+    <div class="site-title">
+      <a class="navbar-brand" href="#"><img src="/img/fitex.jpg" alt="لوگوی فیتکس">
+      </a>
+
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-nav" aria-controls="my-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-align-left"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="my-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light" href="/">صفحه اصلی <span class="sr-only"></span></a>
+        </li>
+          <% categories.forEach(category => { %>
+    <ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= category.name%> <i class="fad fa-chevron-down"></i>
+          </a>
+
+            <% if(category.childs) { %>
+
+          <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+            <ul>
+              <% category.childs.forEach(cate => { %>
+              <li> <a class="dropdown-item waves-effect waves-light"  href="/post?category=<%= cate.slug %>"><%= cate.name %></a></li>
+              <% }) %>
+            </ul>
+          </div>
+            <% } %>
+
+        </li>
+    </ul>
+          <% }) %>
+
+
+      </ul>
+      <div class="navbar-login d-flex" >
+        <a class=" search-btn" data-toggle="modal" data-target="#modalLoginAvatar"><i class="fas fa-search"></i></a>
+        <% if(auth.check) { %>
+        <a class="btn btn-success btn-rounded" href="/admin" ><i
+            class="fas fa-user-plus ml-1"></i>ورود به پنل</a>
+        <a class="btn btn-danger btn-rounded" href="/logout">
+          <i class="fas fa-sign-in-alt ml-1"></i> خروج</a>
+        <% } else { %>
+        <a class="btn btn-primary btn-rounded"  href="/auth/register"><i
+            class="fas fa-user-plus ml-1"></i>ثبت نام</a>
+        <a class="btn btn-primary btn-rounded" href="/auth/login">
+          <i class="fas fa-sign-in-alt ml-1"></i> ورود</a>
+
+        <% } %>
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container mt-2 ">
+
+    <%- body %>
+
+  </div>
+
+  <section class="top-footer mt-4">
+
+    <div class="container-fluid grey lighten-3 mb-0 pb-0">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-12">
+            <h5 class="font-weight-bold mt-5 mb-3">دسته بندی مطالب</h5>
+            <hr class="mb-4">
+              <% categories.forEach(category => { %>
+            <ul class="text-center">
+              <li><a class="" href="/post?category=<%= category.slug %>"><h4><%= category.name %></h4></a></li>
+            </ul>
+              <% }) %>
+
+          </div>
+
+          <div class="col-lg-4 col-md-6 papular-footer">
+            <h5 class="font-weight-bold mt-5 mb-3"> آخرین مطالب </h5>
+            <hr class="mb-4">
+
+              <% headers.forEach(course => { %>
+
+
+            <div class="row mt-2">
+
+              <!-- Grid column -->
+              <div class="col-4">
+
+                <!-- Image -->
+                <div class="view overlay  mb-3">
+                  <img src="<%= course.thumb %>" class="img-fluid" alt="Post">
+                  <a href="<%= course.path() %>">
+                    <div class="mask rgba-white-slight"></div>
                   </a>
-                      <!--<li><a class="btn btn-success btn-sm ml-2" href="/auth/login">ورود</a></li>-->
-                      <!--<li><a class="btn btn-primary btn-sm" href="/auth/register">عضویت</a></li>       -->
-                    <% } %>
-              </ul>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Second column -->
+              <div class="col-8 mb-1">
+
+                <!-- Post data -->
+                <div class="">
+                  <h3 class="mb-1">
+                    <a href="#!" class="text-hover font-weight-bold"><%= course.title %></a>
+                  </h3>
+                </div>
+
+              </div>
+              <!-- Second column -->
+
             </div>
+            <hr>
+              <% }) %>
+          </div>
+          <div class="col-lg-4 col-md-6 papular-footer">
+            <h5 class="font-weight-bold mt-5 mb-3">مطالب قدیمی</h5>
+            <hr class="mb-4">
+              <% oldest.forEach(course => { %>
+
+
+            <div class="row mt-2">
+
+              <!-- Grid column -->
+              <div class="col-4">
+
+                <!-- Image -->
+                <div class="view overlay  mb-3">
+                  <img src="<%= course.thumb %>" class="img-fluid" alt="Post">
+                  <a href="<%= course.path() %>">
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Second column -->
+              <div class="col-8 mb-1">
+
+                <!-- Post data -->
+                <div class="">
+                  <h3 class="mb-1">
+                    <a href="#!" class="text-hover font-weight-bold"><%= course.title %></a>
+                  </h3>
+                </div>
+
+              </div>
+              <!-- Second column -->
+
+            </div>
+            <hr>
+              <% }) %>
+
+          </div>
+
         </div>
 
-      </nav>
-
-
-
-    <div class="container mt-2 ">
-
-      <%- body %>
-
-    </div>
-    <div class="Footer  bg-dark text-white">
-        <!-- Footer -->
-        <footer class="page-footer font-small teal pt-4 ">
-
-            <nav class="nav nav-pils justify-content-center">
-                <a class="nav-item nav-link " href="https://www.instagram.com/fitexapp/"><img class="imgSocial" src="http://mag.fitexapp.ir/185985.svg" alt=""></a>
-                <a class="nav-item nav-link " href="#"><img class="imgSocial" src="http://mag.fitexapp.ir/aparat.png" alt=""></a>
-                <a class="nav-item nav-link" href="#"><img class="imgSocial" src="http://mag.fitexapp.ir/145812.svg" alt=""></a>
-            </nav>
-            <!-- Copyright -->
-
-            <div class="text-center">تمامی حقوق متعلق به فیتکس میباشد , انتشار مطالب با ذکر منبع بلا مانع است</div>
-            <div class="footer-copyright text-center py-3">© 2019 Copyright:
-                <a class="bg-danger text-white" href="https://fitexapp.ir"> fitexapp.ir</a>
-
-            </div>
-            <!-- Copyright -->
-
-        </footer>
-        <!-- Footer -->
+      </div>
     </div>
 
+  </section>
+  <footer class="page-footer stylish-color-dark text-center text-md-left mt-0 pt-4">
+
+    <div class="container">
+
+      <div class="row text-center text-md-left mt-3 pb-3 ">
+
+        <hr class="w-100 clearfix d-md-none">
+
+       
+        <hr class="w-100 clearfix d-md-none">
+
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 text-center">
+          <h6 class="text-uppercase mb-4 font-weight-bold">لینک های مفید</h6>
+          <p>
+            <a href="/about-us">درباره ما</a>
+          </p>
+          <p>
+            <a data-toggle="modal" data-target="#modalCotactForm">تماس با ما</a>
+          </p>
+          <p>
+            <a href="#!">عضویت در خبرنامه</a>
+          </p>
+          <p>
+            <a href="#!">کمک لازم داری؟</a>
+          </p>
+        </div>
+        <hr class="w-100 clearfix d-md-none">
+
+     
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 text-center">
+          <h6 class="text-uppercase mb-4 font-weight-bold">تماس با ما</h6>
+          <p>
+            <i class="fas fa-home mr-3"></i> :  لرستان-خرم آباد-میدان جهادگران</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> : info@example.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> : 066666666</p>
+          
+        </div>
 
 
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145305000-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 text-center">
+          <h6 class="text-uppercase mb-4 font-weight-bold">درباره ما</h6>اپلیکیشن فیتکس به شما اموزش نکات و حرکات ورزشی رو میده و  بهتون برنامه میده که راحت بتونید توی خونه خودتون با برنامه تمرین کنید</p>
+          <a href="/land" class="btn btn-success">میخوایی فیتکس رو ببینی؟ <i class="fas fa-long-arrow-alt-left"></i></a>
+        </div>
+     
 
-        gtag('config', 'UA-145305000-1');
-    </script>
+      </div>
 
-    <%- script %>
+
+      <hr>
+
+      <div class="row py-3 d-flex align-items-center flex-column text-center ">
+
+        <div class="col-md-12 d-flex justify-content-center ">
+
+          <p class="text-center text-md-left white-text"> © تمام حقوق برای <a href="#" class="text-success">FitexApp</a> محفوظ است 
+
+          </p>
+   
+
+        </div>
+
+        <div class="col-md-12 d-flex justify-content-center">
+
+          <div class="social-section text-center text-md-left">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item mx-0">
+                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mx-0">
+                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mx-0">
+                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4">
+                  <i class="fab fa-google-plus-g"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mx-0">
+                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <script src="/js/jquery.min.js"></script>
+  <!-- <script src="/js/owl.carousel.min.js"></script> -->
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/mdb.min.js"></script>
+  <script src="/js/multi-range.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145305000-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145305000-1');
+  </script>
+
+  <%- script %>
 </body>
+
 </html>

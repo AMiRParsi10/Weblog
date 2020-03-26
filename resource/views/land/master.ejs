@@ -1,120 +1,122 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%- defineContent('title') || 'مجله فیتکس'  %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="اپلیکیشن و مجله ورزشی فیتکس تمامی نیاز های علمی و تخصصی شما در مورد ورزش , سلامت و تغذیه را پشتیبانی میکند. ">
-    <meta name="keywords" content="اپلیکیشن فیتکس , فیتکس , مجله فیتکس , وبسایت فیتکس , فیتنس, تمرین در منزل, مقالات ورزشی ,سلامت ,تغذیه, ورزش بانوان  ,دختران ورزشکار, پسران ورزشکار, تمرین بدون نیاز به تجهیزات , باشگاه ورزشی, تناسب اندام ,زیبایی ظاهری , برنامه های تمرینی, بدنسازی ,باشگاه ورزشی , تیم فیتکس   ">
-    <meta name="google-site-verification" content="8_f4erw6ZcM-muO0yKU5o16H7pPnuyPYfMIn0E-0b8k" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%- defineContent('title') || ' فیتکس'  %></title>
+  <meta name="description"
+    content="اپلیکیشن ورزشی فیتکس تمامی نیاز های علمی و تخصصی شما در مورد تمرینات ورزشی را پشتیبانی میکند. ">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/bootstrap-rtl.min.css" />
-    <link rel="stylesheet" href="/css/vazir.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/admin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap-rtl.min.css" />
+  <link rel="stylesheet" href="/css/owl.carousel.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/css/mdb.min.css">
+  <link rel="stylesheet" href="/css/multi-range.min.css">
+  <link rel="stylesheet" href="/css/vazir.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/main.css">
 
 
-    <%- style %>
+  <%- style %>
 </head>
+
 <body>
+<nav class="navbar navbar-expand-lg scrolling-navbar fixed-top navbar-dark info-color" id="nav-bar">
+  <div class="site-title">
+    <a class="navbar-brand" href="#"><img src="/img/fitex.jpg" alt="لوگوی فیتکس">
+    </a>
 
-
-
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand bg-secondary p-2" href="/">مجله ورزشی فیتکس</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                <!--<li class="nav-item font-weight-bold pr-2" >-->
-                <!--<a class="nav-link  text-light" href="/">صفحه اصلی</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                <!--<a class="nav-link" href="/courses">دوره ها</a>-->
-                <!--</li>-->
-                <li class="nav-item  mr-2">
-                    <a class="nav-link text-light font-weight-normal" href="/about-us">درباره ما</a>
-                </li>
-
-                <li class="nav-item  mr-2">
-                    <a class="nav-link text-light font-weight-normal" href="/posts">همه مطالب</a>
-                </li>
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right ">
-                </li>
-                <li class="">
-                <li><a class="btn btn-outline-info btn-sm p-2 mt-2 ml-2" href="/land">معرفی اپلیکیشن</a></li>
-                </li>
-                <% if(auth.check) { %>
-                <li><a class="btn btn-primary btn-sm ml-2 " href="/admin">پنل کاربری</a></li>
-                <li><a class="btn btn-outline-danger btn-sm" href="/logout">خروج</a></li>
-                <% } else { %>
-                <a class="navbar" href="https://fitexapp.ir/">
-
-                    <!--<img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">-->
-                    <img src="http://mag.fitexapp.ir/fitexlogowhite.png" width="110" height="40" class="d-inline-block align-top" alt="">
-
-                </a>
-                <!--<li><a class="btn btn-success btn-sm ml-2" href="/auth/login">ورود</a></li>-->
-                <!--<li><a class="btn btn-primary btn-sm" href="/auth/register">عضویت</a></li>       -->
-                <% } %>
-            </ul>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-nav" aria-controls="my-nav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-align-left"></i></span>
+  </button>
+  <div class="collapse navbar-collapse" id="my-nav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light" href="#">صفحه اصلی <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          سبک زندگی <i class="fad fa-chevron-down"></i></a>
+        <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item waves-effect waves-light" href="#">انگیزشی</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">عادات روزانه</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">
+            متفرقه</a>
         </div>
-    </div>
-
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          ورزش و تناسب اندام <i class="fad fa-chevron-down"></i></a>
+        <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item waves-effect waves-light" href="#">رشته های ورزشی</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">آموزش حرکات ورزشی</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          تغذیه و رژیم غذایی <i class="fad fa-chevron-down"></i></a>
+        <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item waves-effect waves-light" href="#">مکمل شناسی</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">کالری ها</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">رژیم غذایی</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          سلامت فردی <i class="fad fa-chevron-down"></i></a>
+        <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item waves-effect waves-light" href="#">پوست و مو</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">بیماری و آسیب ها</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">زنان و بهداشت فردی</a>
+          <a class="dropdown-item waves-effect waves-light" href="#">داروشناسی</a>
+        </div>
+      </li>
+    </ul>
+   
+  </div>
 </nav>
 
 
 
-<div class="container mt-2 ">
+
+
+
+  <div class="">
 
     <%- body %>
 
-</div>
-<div class="Footer  bg-dark text-white">
-    <!-- Footer -->
-    <footer class="page-footer font-small teal pt-4 ">
-
-        <nav class="nav nav-pils justify-content-center">
-            <a class="nav-item nav-link " href="https://www.instagram.com/fitexapp/"><img class="imgSocial" src="http://mag.fitexapp.ir/185985.svg" alt=""></a>
-            <a class="nav-item nav-link " href="#"><img class="imgSocial" src="http://mag.fitexapp.ir/aparat.png" alt=""></a>
-            <a class="nav-item nav-link" href="#"><img class="imgSocial" src="http://mag.fitexapp.ir/145812.svg" alt=""></a>
-        </nav>
-        <!-- Copyright -->
-
-        <div class="text-center">تمامی حقوق متعلق به فیتکس میباشد , انتشار مطالب با ذکر منبع بلا مانع است</div>
-        <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            <a class="bg-danger text-white" href="https://fitexapp.ir"> fitexapp.ir</a>
-
-        </div>
-        <!-- Copyright -->
-
-    </footer>
-    <!-- Footer -->
-</div>
+  </div>
 
 
 
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145305000-1"></script>
-<script>
+  <script src="/public/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/public/css/bootstrap.min.css"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145305000-1"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-145305000-1');
-</script>
+  </script>
 
-<%- script %>
+  <%- script %>
 </body>
+
 </html>

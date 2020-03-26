@@ -14,8 +14,10 @@ const registerValidator = require('app/http/validators/registerValidator');
 const loginValidator = require('app/http/validators/loginValidator');
 // const forgotPasswordValidator = require('app/http/validators/forgotPasswordValidator');
 // const resetPasswordValidator = require('app/http/validators/resetPasswordValidator');
-
-
+router.use((req , res , next) => {
+    res.locals.layout = "auth/master";
+next();
+});
 // Home Routes
 router.get('/login' , loginController.showLoginForm);
 router.post('/login' , loginValidator.handle() ,loginController.loginProccess);
@@ -23,11 +25,6 @@ router.post('/login' , loginValidator.handle() ,loginController.loginProccess);
 router.get('/register' , registerController.showRegsitrationForm);
 router.post('/register' , registerValidator.handle() , registerController.registerProccess);
 
-// router.get('/password/reset' , forgotPasswordController.showForgotPassword);
-// router.post('/password/email' , forgotPasswordValidator.handle() , forgotPasswordController.sendPasswordResetLink);
-
-// router.get('/password/reset/:token' , resetPasswordController.showResetPassword);
-// router.post('/password/reset' , resetPasswordValidator.handle() , resetPasswordController.resetPasswordProccess);
 
 
 router.get('/google' , passport.authenticate('google' , { scope : ['profile' , 'email'] }));

@@ -1,260 +1,144 @@
 <!--second nav with category and search-->
-<nav class="navbar navbar-expand-md navbar-dark ">
-    <div class="container">
-        <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#dw" aria-controls="dw" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <li class="badge badge-danger p-2">دسته بندی ها</li>
-        <div class="collapse navbar-collapse p-1" id="dw">
-            <ul class="navbar-nav ml-auto">
-                <% categories.forEach(category => { %>
-                <li class="nav-item dropdown m-2 p-1 ">
-                    <a class="nav-link dropdown-toggle d-inline badge-dark text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <%= category.name%>
+
+
+<header class="jumbotron hero-spacer text-white  row  ">
+    <div class="col-md-6 p-3 col-12">
+        <h3 class=" font-weight-bold "> مجله ورزشی <strong>فیتکس</strong> با رویکرد علمی!</h3>
+        <h5 class="pt-2 pb-2 "> به روز و کاربردی برای بهبود سبک زندگی شما</h5>
+        <h7 class="pt-2 "> مطالب مرتبط با تندرستی , سلامت , ورزش , تغذیه مناسب , برنامه های تمرینی و تناسب اندام را
+            میتوانید بطور مرتب در مجله ما بخوانید...</h7>
+    </div>
+
+    <div class="col-md-6 text-left col-12">
+        <img class="cardHeight img-fluid" src="https://mag.fitexapp.ir/undraw_working_out_6psf.svg" alt="fitex">
+    </div>
+</header>
+
+<div class="container mt-5 new-articles-section">
+    <section>
+        <div class="row">
+            <% header1.forEach(course => { %>
+            <div class="col-lg-8 col-md-12">
+                <div class="news-tile view zoom z-depth-1  mb-4">
+                    <a href="<%= course.path() %>" class="text-white">
+                        <img class="w-100" src="<%= course.thumb %>"
+                            class="img-fluid " alt="sample image" />
+                        <div class="mask rgba-stylish-strong">
+                            <div class="text-white text-center py-lg-5 py-0 my-0">
+                                <div>
+                                    <h2 class="card-title font-weight-bold pt-2">
+                                        <strong><%= course.title %></strong>
+                                    </h2>
+
+                                    <p class="mx-5 clearfix d-none d-md-block"></p>
+                                </div>
+                            </div>
+                        </div>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <% if(category.childs) { %>
-                        <ul class="p-1 badge-dark  ">
-                            <% category.childs.forEach(cate => { %>
-                            <li class="d-block m-1 d-flex justify-content-center">
-                                <a class="text-white text-decoration-none  font-weight-normal " href="/post?category=<%= cate.slug %>"><%= cate.name %></a>
-                            </li>
-                            <% }) %>
-                        </ul>
-                        <% } %>
-                    </div>
-                </li>
+                </div>
+            </div>
+            <% }) %>
+
+            <% header2.forEach(course => { %>
+
+            <div class="col-lg-4 col-md-12">
+                <!--News tile -->
+                <div class="news-tile view zoom z-depth-1  mb-4">
+                        <a href="<%= course.path() %>" class="text-white">
+                            <img src="<%= course.thumb %>"
+                            class="img-fluid w-100 " alt="sample image" />
+                        <div class="mask rgba-stylish-strong">
+                            <div class="text-white text-center py-lg-5 py-0 my-0">
+                                <div>
+                                    <h3 class="card-title font-weight-bold pt-2">
+                                        <strong><%= course.title %></strong>
+                                    </h3>
+
+                                    <p class="mx-5 clearfix d-none d-md-block"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+                <% header3.forEach(course => { %>
+
+                <div class="news-tile view zoom z-depth-1  mb-4">
+                    <a href="<%= course.path() %>" class="text-white">
+                        <img src="<%= course.thumb %>"
+                            class="img-fluid w-100 " alt="sample image" />
+                        <div class="mask rgba-stylish-strong">
+                            <div class="text-white text-center py-lg-5 py-0 my-0">
+                                <div>
+                                    <h3 class="card-title font-weight-bold pt-2">
+                                        <strong><%= course.title %></strong>
+                                    </h3>
+
+                                    <p class="mx-5 clearfix d-none d-md-block"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
                 <% }) %>
 
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right ">
-                <form class="form-inline my-2 my-lg-0 badge-dark badge p-1"  action="/post" method="get">
-                    <input class="form-control mr-sm-2" type="search" placeholder="عبارت دلخواه را تایپ کنید" aria-label="Search">
-                    <button class="btn-dark btn " type="submit">جست و جو</button>
-                </form>
-            </ul>
-        </div>
-    </div>
-
-</nav>
-
-
-
-<%
- let {category} = req.query
- %>
-
-
-
-                          <header class     ="jumbotron hero-spacer text-white  row  " style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)">
-<div class="col-md-6 p-3 col-12">
-    <h3 class=" font-weight-bold "> مجله ورزشی  <span class="badge-success p-1 " style="background: #009688">فیتکس</span>  با رویکرد علمی!</h3>
-        <h5 class="pt-2 pb-2 "> به روز و کاربردی برای بهبود سبک زندگی شما</h5>
-    <h7 class="pt-2 "> مطالب مرتبط با تندرستی , سلامت , ورزش , تغذیه مناسب , برنامه های تمرینی و تناسب اندام را میتوانید بطور مرتب در مجله ما بخوانید...</h7>
-</div>
-
-                              <div class="col-md-6 text-left col-12">
-                                  <img class="cardHeight" src="https://mag.fitexapp.ir/undraw_working_out_6psf.svg" alt="fitex">
-                              </div>
-                          </header>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="row ">
-        <div class="d-inline bg-dark text-white m-3 p-2 ">
-            <h3 > سر تیتر مجله</h3>
-        </div>
-    </div>
-    <!-- header big articles-->
-
-    <div class="row  ">
-        <% headers.forEach(head => { %>
-        <div class="col-12 col-md-4  mb-3 ">
-            <a href="<%= head.path() %>"> <img class="card-img-top headHeight" src="<%= head.thumb %>" alt="<%= head.title%>"></a>
-        <div class="card-body shadow heightHeadCart">
-            <a href="<%= head.path() %>" class="text-decoration-none" ><h4 class="card-title text-dark "><%= head.title%></h4></a>
-          <div class="d-none d-sm-block"> <p class="card-text "><%- head.sum.substr(0 , 180)%>...</p></div>
-       <%/*%>     <a href="<%= head.path() %>" class="btn btn-primary">ادامه مطلب →</a><%*/%>
-
-        </div>
-        <div class="card-footer text-muted ">
-            <span class="badge-danger p-1"> <%= date(head.createdAt).format('jD jMMMM jYYYY') %></span> - <span class="badge-secondary p-1"><%= head.timeline %></span>
-
-        </div>
-        </div>
-       <% }) %>
-
-
-
-    </div>
-
-
-
-
-
-
-
-<!--categories-->
-<div class="m-5">
-    <h2 class="d-flex justify-content-center">دسته بندی مطالب</h2>
-</div>
-
-<div class="row">
-
-    <% categories.forEach(category => { %>
-
-    <div class="col-12 col-md-3 mb-3 badge-dark p-4 ">
-    <div class="card text-white   p-3 col-12 " style="background-color: #667eea">
-            <div class="card-body d-flex justify-content-center">
-                <a class="text-white font-weight-bold text-decoration-none " href="/post?category=<%= category.slug %>"><h4><%= category.name %></h4></a>
             </div>
-        <!--<% if(category.childs) { %>-->
-        <!--<ul class="p-1">-->
-            <!--<% category.childs.forEach(cate => { %>-->
-            <!--<li>-->
-                <!--<a class="text-white " href="/post?category=<%= cate.slug %>"><%= cate.name %></a>-->
-            <!--</li>-->
-            <!--<% }) %>-->
-        <!--</ul>-->
-        <!--<% } %>-->
-    </div>
-    </div>
-    <% }) %>
+        </div>
+    </section>
 </div>
-<!--end of categories-->
+
+<section>
+
+    <div class="container">
+
+        
+        <h2 class="text-center h2 my-5 pt-4"> مطالب اخیر</h2>
+        
+        <div class="row text-center mb-2 my-card-row justify-content-md-between">
+            <% courses.forEach(course => { %>
+
+            <div class="col-lg-4 col-md-12 mb-4 ml-1 my-card">
+               
+                <div class="view overlay  mb-2">
+                    <img src="<%= course.thumb %>" alt="<%= course.title %>" class="img-fluid w-100">
+                    <a  href="<%= course.path() %>">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <h2 class="mb-2 mt-4 font-weight-bold article-title"><a  href="<%= course.path() %>"><%= course.title %></a> </h2>
+
+               
+                <div class="row card-tags">
+
+                    
+                    <div class="col-lg-6 col-md-6 text-lg-right tags ">
+                        <p class="grey-text">
+                           <i class="far fa-calendar-alt"></i> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></p>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 text-lg-left tags">
+                        <p class="grey-text">
+                            <i class="far fa-clock-o" aria-hidden="true"></i> <%= course.timeline %></p>
+                    </div>
+                    
+
+                </div>
+                <p class="dark-grey-text article-text"><%- course.sum.substr(0,130)%>... </p>
+                <a class="text-uppercase font-small font-weight-bold spacing btn see-btn" href="#">مشاهده <i
+                        class="fad fa-chevron-double-left"></i></a>
+
+            </div>
+            <% }) %>
 
 
+        </div>
 
-<%/*%> search <%*/%>
-                          <section class="search-sec mb-5 " >
-                              <div class="container">
-                                  <form action="/post" method="get" novalidate="novalidate">
-                                      <div class="row">
-                                          <div class="col-lg-12">
-                                              <div class="row">
-                                                  <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                                      <button type="submit" class="btn wrn-btn btn-outline-primary">جست و جو</button>
-                                                  </div>
-                                                  <!--<div class="col-lg-3 col-md-3 col-sm-12 p-0">-->
-                                                  <!--<select class="form-control search-slt" id="exampleFormControlSelect1">-->
-                                                  <!--<option>Select Pickup City</option>-->
-                                                  <!--<option>Example one</option>-->
-                                                  <!--<option>Example one</option>-->
-                                                  <!--<option>Example one</option>-->
-                                                  <!--<option>Example one</option>-->
-                                                  <!--<option>Example one</option>-->
-                                                  <!--<option>Example one</option>-->
-                                                  <!--</select>-->
-                                                  <!--</div>-->
-
-
-
-                                                  <div class="col-lg-6 col-md-3 col-sm-12 p-0">
-                                                      <input type="text" class="form-control search-slt" name="search" placeholder="کلمه یا متن دلخواهتان را جست و جو کنید ">
-                                                  </div>
-                                                  <div class="form-group col-md-3">
-                                                      <select name="category" class="form-control search-slt">
-                                                          <option value="all">همه دسته ها</option>
-                                                          <% categories.forEach(cate => { %>
-                                                          <option value="<%= cate.slug %>" <%= cate.slug === category ? 'selected' : '' %> ><%= cate.name %></option>
-                                                          <% }) %>
-                                                      </select>
-                                                  </div>
-
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </form>
-                              </div>
-                          </section>
-
-     <%/*%>End search <%*/%>
-<div class="row ">
-    <div class="  ">
-        <div class=" p-2 bg-dark text-white  m-3">
-            <h4 >آخرین خواندنی ها</h4>
+        <div  class="see-more text-center">
+            <a  href="/posts" class="btn btn-success">مطالب بیشتر<i class="fad fa-arrow-left"></i></a>
         </div>
 
     </div>
 
-    <div class="">
-        <div class=" m-3  ">
-
-            <a class=" btn-danger btn   p-3  font-weight-bold "  href="/posts"> پست های بیشتر →</a>
-        </div>
-
-    </div>
-
-</div>
-
-
-
-
-<div class="row ">
-    <% courses.forEach(course => { %>
-      <div class="col-12 col-md-3  mb-4 ">
-          <div class="card shadow heightCart ">
-              <a href="<%= course.path() %>">
-
-                         <img class="card-img-top cardHeight" src="<%= course.thumb %>" alt="<%= course.title %>">
-                     </a>
-
-              <div class="card-body ">
-                <h6 class=" p-1"><a class="text-dark text-decoration-none" href="<%= course.path() %>"><%= course.title %></a></h6>
-                  <p class=" card-text"><%- course.sum.substr(0,130)%>...</p>
-                     <%/*%> <a href="<%= course.path() %>" class="btn btn-info btn-sm cen">اطلاعات بیشتر</a> <%*/%>
-
-
-              </div>
-              <div class="card-footer text-muted alert-secondary sidebar-heading">
-                  <span class="badge-danger p-1"> <%= date(course.createdAt).format('jD jMMMM jYYYY') %></span> - <span class="badge-secondary p-1"><%= course.timeline %></span>
-
-              </div>
-          </div>
-      </div>
-    <% }) %>
-
-</div>
-     <div class="row mt-5 ">
-         <div class="col-12 col-md-12 d-flex justify-content-center ">
-             <a class=" btn-outline-secondary btn  p-3  font-weight-bold" href="/posts"> پست های بیشتر →</a>
-         </div>
-     </div>
-
-
-
-                          <div class="p-3 mt-5 " style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
-                          >
-                              <div class="  ">
-                                  <h2 class="d-flex justify-content-center text-white">
-                                      <span class="badge-info p-2">FitEx</span>
-                                  </h2>
-                                  <h1 class="  text-white mb-3 d-flex  justify-content-center">
-                                      امروز با  فیتکس  تمرین کن!
-                                  </h1>
-                                  <h6 class="  text-white mb-3 d-flex  justify-content-center" > به شما کمک میکنه تا بدون نیاز به تجهیزات حتی توی خونه ورزش کنید</h6>
-                                  <h6 class="  text-white mb-3 d-flex  justify-content-center" >بهتون برنامه میده و گام به گام شما رو تمرین میده</h6>
-                                  <h6 class="  text-white mb-3 d-flex  justify-content-center" >مجله رو هم پوشش میده</h6>
-                                  <div class="d-flex justify-content-center">
-
-                                      <div class="col-12 col-md-12 d-flex justify-content-center ">
-                                          <a class=" btn-info btn  p-3  font-weight-bold" href="/land"> معرفی اپلیکیشن →</a>
-                                      </div>
-                                  </div>
-
-                              </div>
-                          </div>
-
-
-
+</section>
 

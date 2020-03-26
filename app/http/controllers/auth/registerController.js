@@ -2,11 +2,13 @@ const controller = require('app/http/controllers/controller');
 const passport = require('passport');
 const User = require('app/models/user');
 
+
 class registerController extends controller {
 
     showRegsitrationForm(req , res) {
         const title = 'صفحه عضویت';
-        res.render('home/auth/register' , {  title });
+
+        res.render('auth/register' , {  title   });
 
     }
     // recaptcha : this.recaptcha.render() , 
@@ -25,7 +27,7 @@ class registerController extends controller {
     register(req , res , next) {
         passport.authenticate('local.register' , { 
             successRedirect : '/',
-            failureRedirect : '/auth/register',
+            failureRedirect : '/register',
             failureFlash : true
         })(req, res , next);
     }
