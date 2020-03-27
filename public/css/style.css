@@ -237,7 +237,11 @@ footer.page-footer {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 }
-
+@media (min-width: 992px) {
+  .my-mag-card .view {
+    height: 225px;
+  }
+}
 /* Animation */
 @keyframes gradient {
   0% {
