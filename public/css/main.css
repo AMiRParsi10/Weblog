@@ -158,6 +158,10 @@ header.jumbotron {
 @media (min-width: 992px) {
   .my-card-row .col-lg-4 {
     max-width: 32.333333%;
+    margin-left: 5px !important;
+  }
+  .my-card .view {
+    height: 225px;
   }
 }
 /* MyCard  */
