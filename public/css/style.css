@@ -61,11 +61,12 @@ header,
 .header-img {
   padding: 1rem 1rem;
 }
-@media (max-width:816px){
+@media (max-width: 816px) {
   .header-img {
-  padding: 13rem 1rem;
+    padding: 13rem 1rem;
+  }
 }
-}
+
 .navbar-brand img {
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
@@ -237,6 +238,11 @@ footer.page-footer {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 }
+@media (min-width: 992px) {
+  .my-mag-card .view {
+    height: 225px;
+  }
+}
 
 /* Animation */
 @keyframes gradient {
@@ -250,3 +256,5 @@ footer.page-footer {
     background-position: 0% 50%;
   }
 }
+
+

@@ -1,9 +1,9 @@
 <!--nav with category-->
-<div class="row text-center  mb-2 my-card-row justify-content-md-between posts-section" >
+<div class="row text-center  mb-2 my-card-row  posts-section" >
 
 
     <% courses.docs.forEach(course => { %>
-    <div class="col-lg-4 col-md-12 mb-4 ml-1 my-card" style="margin-top: 20px">
+    <div class="col-lg-4 col-md-12 mb-4  my-card" style="margin-top: 20px">
 
         <div class="view overlay  mb-2">
             <img src="<%= course.thumb %>" class="img-fluid w-100" alt="First sample image">
@@ -33,7 +33,7 @@
 
         </div>
         <p class="dark-grey-text article-text"><%- course.sum.substr(0,180)%>...</p>
-        <a class="text-uppercase font-small font-weight-bold spacing btn see-btn" href="#">مشاهده <i
+        <a class="text-uppercase font-small font-weight-bold spacing btn see-btn" href="<%= course.path() %>">مشاهده <i
                 class="fad fa-chevron-double-left"></i></a>
 
     </div>

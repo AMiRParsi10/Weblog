@@ -90,7 +90,10 @@ ul {
 .serach-modal-form form {
   flex-direction: column;
 }
-
+.jumbotron h1
+{
+  font-size: 1.9rem;
+}
 .serach-modal-form form .btn {
   margin: 20px !important;
   padding: 0.41rem 2.6rem;
@@ -158,8 +161,18 @@ header.jumbotron {
 @media (min-width: 992px) {
   .my-card-row .col-lg-4 {
     max-width: 32.333333%;
+    margin-left: 5px !important;
+  }
+
+  .my-card .view {
+    height: 225px;
+  }
+  .new-articles-section .news-title-big
+  {
+    height: 490px;
   }
 }
+
 /* MyCard  */
 .my-card {
   padding: 0;
@@ -177,6 +190,7 @@ header.jumbotron {
 .my-card h2 {
   padding: 0 10px;
 }
+
 .my-card p {
   padding: 0 1rem;
 }
@@ -278,7 +292,8 @@ a.tag-link {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.page-footer a.btn-floating,.float-sign {
+.page-footer a.btn-floating,
+.float-sign {
   background-color: #fff;
   box-shadow: none !important;
   border-radius: 0 !important;
@@ -301,7 +316,8 @@ a.tag-link {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 }
-.page-footer a.btn-floating i.fa-twitter:hover,.facebook-sign {
+.page-footer a.btn-floating i.fa-twitter:hover,
+.facebook-sign {
   color: #fff !important;
   background: #0a92d1;
   transition: 0.5s;
@@ -311,7 +327,8 @@ a.tag-link {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 }
-.page-footer a.btn-floating i.fa-google-plus-g:hover,.google-sign {
+.page-footer a.btn-floating i.fa-google-plus-g:hover,
+.google-sign {
   color: #fff !important;
   background: #8d0f06;
   transition: 0.5s;
@@ -417,9 +434,10 @@ a.tag-link {
 }
 
 .about-us-section {
+  color: #000;
   padding: 3rem 2rem;
   background-color: #04910b !important;
-  background: linear-gradient(-45deg, #7b01cc, #07ad52, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #dfdfdf, #f9f9f9);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   margin-top: 10rem;
@@ -427,6 +445,7 @@ a.tag-link {
 }
 .about-us-section div {
   line-height: 2.5;
+  color: #000;
 }
 .about-us-section div h3 {
   font-weight: bold;
@@ -437,19 +456,19 @@ a.tag-link {
 .my-login-form {
   margin-top: 10rem;
 }
-.my-login-form  .input-group > .input-group-prepend > .input-group-text{
-  background-color: #056a2a ;
+.my-login-form .input-group > .input-group-prepend > .input-group-text {
+  background-color: #056a2a;
   color: #fff;
 }
 .my-login-form .custom-control-input:checked ~ .custom-control-label::before {
-  border-color: #056a2a ;
+  border-color: #056a2a;
 
-  background-color: #056a2a ;
+  background-color: #056a2a;
 }
 
 .my-login-form button,
 .my-login-form button:hover {
-  background-color: #056a2a  !important;
+  background-color: #056a2a !important;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16), 0 2px 1px 0 rgba(0, 0, 0, 0.12);
 }
 .my-login-form form {
@@ -462,9 +481,8 @@ a.tag-link {
 .my-login-form p {
   font-size: 0.8rem;
 }
-.my-login-form a
-{
-  color: #056a2a  !important;
+.my-login-form a {
+  color: #056a2a !important;
 }
 .my-login-form .form-control::placeholder {
   font-size: 0.7rem;
@@ -473,14 +491,13 @@ a.tag-link {
   font-size: 0.7rem;
 }
 
-#modalCotactForm .modal-dialog.cascading-modal .modal-header,#modalCotactForm .modal-dialog.cascading-modal .btn
-{
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.18),0 1px 1px 0 rgba(0,0,0,0.15) !important;
+#modalCotactForm .modal-dialog.cascading-modal .modal-header,
+#modalCotactForm .modal-dialog.cascading-modal .btn {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18), 0 1px 1px 0 rgba(0, 0, 0, 0.15) !important;
   background-color: #056a2a !important;
 }
 
-#modalCotactForm .modal-dialog.cascading-modal .form-control
-{
+#modalCotactForm .modal-dialog.cascading-modal .form-control {
   background-color: #e6e6e6;
 }
 
@@ -488,7 +505,6 @@ footer.page-footer {
   background-color: #111117 !important;
   border-top: 1px solid #fff;
 }
-
 
 /* Animation */
 @keyframes gradient {

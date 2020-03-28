@@ -3,8 +3,8 @@
 
 <header class="jumbotron hero-spacer text-white  row  ">
     <div class="col-md-6 p-3 col-12">
-        <h3 class=" font-weight-bold "> مجله ورزشی <strong>فیتکس</strong> با رویکرد علمی!</h3>
-        <h5 class="pt-2 pb-2 "> به روز و کاربردی برای بهبود سبک زندگی شما</h5>
+        <h1 class=" font-weight-bold "> مجله ورزشی <strong>فیتکس</strong> با رویکرد علمی!</h1>
+        <h4 class="pt-2 pb-2 "> به روز و کاربردی برای بهبود سبک زندگی شما</h4>
         <h7 class="pt-2 "> مطالب مرتبط با تندرستی , سلامت , ورزش , تغذیه مناسب , برنامه های تمرینی و تناسب اندام را
             میتوانید بطور مرتب در مجله ما بخوانید...</h7>
     </div>
@@ -19,7 +19,7 @@
         <div class="row">
             <% header1.forEach(course => { %>
             <div class="col-lg-8 col-md-12">
-                <div class="news-tile view zoom z-depth-1  mb-4">
+                <div class="news-tile news-title-big view zoom z-depth-1  mb-4">
                     <a href="<%= course.path() %>" class="text-white">
                         <img class="w-100" src="<%= course.thumb %>"
                             class="img-fluid " alt="sample image" />
@@ -94,7 +94,7 @@
         
         <h2 class="text-center h2 my-5 pt-4"> مطالب اخیر</h2>
         
-        <div class="row text-center mb-2 my-card-row justify-content-md-between">
+        <div class="row text-center mb-2 my-card-row ">
             <% courses.forEach(course => { %>
 
             <div class="col-lg-4 col-md-12 mb-4 ml-1 my-card">
@@ -125,7 +125,8 @@
 
                 </div>
                 <p class="dark-grey-text article-text"><%- course.sum.substr(0,130)%>... </p>
-                <a class="text-uppercase font-small font-weight-bold spacing btn see-btn" href="#">مشاهده <i
+                <a class="text-uppercase font-small font-weight-bold spacing btn see-btn"
+                    href="<%= course.path() %>">مشاهده <i
                         class="fad fa-chevron-double-left"></i></a>
 
             </div>
